@@ -1,0 +1,16 @@
+ffmpeg -i E:\wlb.teatu.cn\assets\images\raw\67061c054b3b3.jpg -s 960x720 -q 10 E:\wlb.teatu.cn\assets\images\67061c054b3b3.jpg
+ffmpeg -i E:\wlb.teatu.cn\assets\images\raw\6706146ba031d.jpg -s 960x720 -q 10 E:\wlb.teatu.cn\assets\images\6706146ba031d.jpg
+ffmpeg -i E:\wlb.teatu.cn\assets\images\raw\67061381b0bc2.jpg -s 960x720 -q 10 E:\wlb.teatu.cn\assets\images\67061381b0bc2.jpg
+ffmpeg -i E:\wlb.teatu.cn\assets\images\raw\67061382aff2c.jpg -s 960x720 -q 10 E:\wlb.teatu.cn\assets\images\67061382aff2c.jpg
+ffmpeg -i E:\wlb.teatu.cn\assets\images\raw\67061383c525d.jpg -s 960x720 -q 10 E:\wlb.teatu.cn\assets\images\67061383c525d.jpg
+ffmpeg -i E:\wlb.teatu.cn\assets\images\raw\67061393e3737.jpg -s 960x720 -q 10 E:\wlb.teatu.cn\assets\images\67061393e3737.jpg
+ffmpeg -i E:\wlb.teatu.cn\assets\images\raw\67061396b32d7.jpg -s 960x720 -q 10 E:\wlb.teatu.cn\assets\images\67061396b32d7.jpg
+ffmpeg -i E:\wlb.teatu.cn\assets\images\raw\670613827a79b.jpg -s 960x720 -q 10 E:\wlb.teatu.cn\assets\images\670613827a79b.jpg
+ffmpeg -i E:\wlb.teatu.cn\assets\images\raw\670613831a246.jpg -s 960x720 -q 10 E:\wlb.teatu.cn\assets\images\670613831a246.jpg
+ffmpeg -i E:\wlb.teatu.cn\assets\images\raw\670613950c57a.jpg -s 960x720 -q 10 E:\wlb.teatu.cn\assets\images\670613950c57a.jpg
+ffmpeg -i E:\wlb.teatu.cn\assets\images\raw\670613960ec62.jpg -s 960x720 -q 10 E:\wlb.teatu.cn\assets\images\670613960ec62.jpg
+ffmpeg -i E:\wlb.teatu.cn\assets\images\raw\670613968e908.jpg -s 960x720 -q 10 E:\wlb.teatu.cn\assets\images\670613968e908.jpg
+ffmpeg -i E:\wlb.teatu.cn\assets\images\raw\670616315bc62.jpg -s 960x720 -q 10 E:\wlb.teatu.cn\assets\images\670616315bc62.jpg
+ffmpeg -i E:\wlb.teatu.cn\assets\images\raw\6706139435bff.jpg -s 960x720 -q 10 E:\wlb.teatu.cn\assets\images\6706139435bff.jpg
+ffmpeg -i E:\wlb.teatu.cn\assets\images\raw\670613988744c.jpg -s 960x720 -q 10 E:\wlb.teatu.cn\assets\images\670613988744c.jpg
+ffmpeg -i E:\wlb.teatu.cn\assets\images\raw\6706139535762.jpg -s 960x720 -q 10 E:\wlb.teatu.cn\assets\images\6706139535762.jpg
