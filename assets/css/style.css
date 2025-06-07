@@ -55,6 +55,13 @@
     color: #534b52;
 }
 
+.h5_5{
+    
+    font-weight: 700;
+    margin-bottom: 10px;
+    font-size: 18px;
+
+}
 /* 优化 */
 hr {
     margin: 1px 0;
@@ -83,3 +90,8 @@ hr {
 .bloder-5 {
     font-weight: 300;
 }
+
+.h-45 {
+    height: 45% !important;
+}
+

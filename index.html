@@ -98,7 +98,7 @@
             <div class="container">
 
                 <div class="row gy-4">
-                    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="50">
+                    <div class="col-lg-6">
                         <div class="card">
                             <div class="col-xl-5 img-fillcontainer img-max300px">
                                 <img resourcesrc="assets/images/67061393e3737.jpg">
@@ -112,7 +112,7 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="col-lg-6" data-aos-delay="100">
                         <div class="card">
                             <div class="col-xl-5 img-fillcontainer img-max300px">
                                 <img resourcesrc="assets/images/67061c054b3b3.jpg">
@@ -126,7 +126,7 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="50">
+                    <div class="col-lg-6">
                         <div class="card">
                             <div class="col-xl-5 img-fillcontainer img-max300px">
                                 <img resourcesrc="assets/images/670613827a79b.jpg">
@@ -140,7 +140,7 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="50">
+                    <div class="col-lg-6">
                         <div class="card">
                             <div class="col-xl-5 img-fillcontainer img-max300px">
                                 <img resourcesrc="assets/images/67061383c525d.jpg">
@@ -159,18 +159,68 @@
 
         <!-- 服务范围 -->
 
-        <div class="container">
-            <div class="container section-title aos-init aos-animate" data-aos="fade-up">
+        <div class="bg-white p-2 rounded mt-2 mb-2 min-vh-100">
+            <div class="container section-title aos-init aos-animate">
                 <h2>服务范围</h2>
                 <p>承办班级、年级、乃至校级和外来的活动</p>
+                <div class="row p-2 rounded mt-2 mb-2" id="service-range-cards-container">
+                    <!-- 服务范围卡片将在这里动态生成 -->
+                </div>
             </div>
+        </div>
 
+        <div class="container">
 
-            <div class="row" id="service-range-cards-container">
-                <!-- 服务范围卡片将在这里动态生成 -->
+            <div class="row justify-content-around gy-4">
+                <!-- <div class="col-lg-6 d-flex align-items-center justify-content-center overflow-hidden">
+                    <img resourcesrc="assets/images/67061382aff2c.jpg" class="object-fit-contain h-45">
+                </div> -->
+                <img resourcesrc="assets/images/67061382aff2c.jpg"
+                    class=" col-lg-6 d-flex align-items-center justify-content-center overflow-hidden object-fit-contain">
+
+                <div class="col-lg-5 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="100">
+                    <h3><strong>各种福利</strong></h3>
+                    <p>独属于网络部成员的福利</p>
+                    <div class="container">
+                        <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="150">
+                            <div>
+                                <h5><strong class="h5_5">活动室</strong></h5>
+                                <p>全部社团内最大的室内活动室——小礼堂，享受来自网络部的独特“排面”吧</p>
+                            </div>
+                        </div><!-- End Icon Box -->
+
+                        <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="200">
+                            <div>
+                                <h5><strong class="h5_5">技术培训</strong></h5>
+                                <p>我们欢迎技术爱好者加入我们！零基础也没关系，我们会为每位成员安排技术培训，快速掌握设备知识！</p>
+                            </div>
+                        </div><!-- End Icon Box -->
+
+                        <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="250">
+                            <div>
+                                <h5><strong class="h5_5">大型活动的“特殊待遇”</strong></h5>
+                                <p>源自于活动时我部门的特殊性，在一些大型活动时我们拥有部分前排座位，以及一定程度的“免票（须佩戴网络部专属工牌）”待遇</p>
+                            </div>
+                        </div><!-- End Icon Box -->
+
+                        <div class="icon-box d-flex position-relative">
+                            <div>
+                                <h5><strong class="h5_5">更多不定时掉落的彩蛋福利</strong></h5>
+                                <p>热情的部员间为你的生日捧场，向学长学姐学习一些生活中实用技巧，与兄弟部门的奇妙联合等你发现！</p>
+                            </div>
+                        </div><!-- End Icon Box -->
+                    </div>
+                </div>
             </div>
 
         </div>
+
+
+
+
+
+
+
     </div>
 
     <!-- 脚本区 -->
@@ -228,8 +278,8 @@
         // 定义服务范围数据
         const serviceRanges = [
             { title: '班级活动排练', content: '在经过班主任（或相关负责人）与主管领导申请后，在小礼堂进行活动排练，使用舞台，更接近真实演出时的场景' },
-            { title: '年级会议', content: '场地承办军训开幕式、表彰大会、年级会议、文化教育、级部学生会会议 等' }, 
-            { title: '校级活动', content: '曾承办校庆、全体教职工会议、各级会议/学习等' }, 
+            { title: '年级会议', content: '场地承办军训开幕式、表彰大会、年级会议、文化教育、级部学生会会议 等' },
+            { title: '校级活动', content: '曾承办校庆、全体教职工会议、各级会议/学习等' },
             { title: '外来活动', content: '他校/组织的各类典礼、晚会、节日庆典等；曾承办武警海口支队的文艺汇演等' },
             { title: '更多活动', content: '随机出现的各类活动等你来迎接' },
             // 可按需添加更多服务范围
@@ -239,9 +289,7 @@
         // 遍历服务范围数据并创建元素
         serviceRanges.forEach(service => {
             const card = document.createElement('div');
-            card.classList.add('col-lg-4', 'col-md-6', 'aos-init', 'aos-animate','mt-2','mb-2');
-            card.setAttribute('data-aos', 'fade-up');
-            card.setAttribute('data-aos-delay', '50');
+            card.classList.add('col-lg-4', 'col-md-6', 'mt-1', 'mb-1');
 
             card.innerHTML = `
                 <div class="card card-body">
