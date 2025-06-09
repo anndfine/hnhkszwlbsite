@@ -212,7 +212,7 @@
         </div>
         <!-- 部门内岗位 -->
         <!-- 每个岗位都对应着不同的专业方面 -->
-        <div id="#岗位" class="mt-2 mb-2">
+        <div id="岗位" class="mt-2 mb-2">
             <br>
             <hr>
             <br>
@@ -220,15 +220,18 @@
         </div>
         <div class="container">
             <div class="row justify-content-around gy-4">
-                <div class="col-lg-5 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="100">
+                <div class="col-lg-10 d-flex flex-column justify-content-center" data-aos="fade-up"
+                    data-aos-delay="100">
                     <h3><strong>部门内岗位</strong></h3>
-                    <p>每个岗位都对应着不同的专业方面</p>
 
                     <!-- 选项卡重构 -->
                     <div class="container">
 
                         <!-- Nav tabs -->
                         <ul class="nav nav-tabs" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link" data-bs-toggle="tab" href="#岗位_简介">简介</a>
+                            </li>
                             <li class="nav-item">
                                 <a class="nav-link" data-bs-toggle="tab" href="#岗位_主控">主控</a>
                             </li>
@@ -245,9 +248,9 @@
 
                         <!-- Tab panes -->
                         <div class="tab-content">
-                            <div class="container tab-pane active"><br>
-                                <h3>点击上方选项</h3>
-                                <p>查看各岗位详情</p>
+                            <div id="岗位_简介" class="container tab-pane active"><br>
+                                <h3>点击上方选项查看各岗位详情</h3>
+                                <p>每个岗位都对应着不同的专业方面</p>
                             </div>
                             <div id="岗位_主控" class="container tab-pane fade"><br>
                                 <h3>主控&nbsp;——&nbsp;一场活动的顶梁柱</h3>
@@ -326,102 +329,20 @@
                         </div>
 
                     </div>
-
-                    <div class="container">
-                        <ul class="nav nav-tabs row  g-2 d-flex" data-aos="fade-up" data-aos-delay="50" role="tablist">
-                        </ul>
-
-                        <div class="tab-content" data-aos="fade-up" data-aos-delay="100">
-
-                            <div class="tab-pane fade active show" id="features-tab-1" role="tabpanel">
-                                <div class="row">
-                                    <div
-                                        class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
-                                        <h3>主控——一场活动的顶梁柱</h3>
-                                        <p class="fst-italic">
-                                            主控要协调整场活动的进程与各个岗位间的行动，可能面对各类突发事件，需要由主控妥善处置，避免失控的出现
-                                            <br><br>以下是岗位要求
-                                        </p>
-
-                                    </div>
-                                    <div class="col-lg-6 order-1 order-lg-2 text-center">
-                                        <img src="assets/img/loading.jpg" resourcesrc="assets/images/670616315bc62.jpg"
-                                            alt="" class="img-fluid">
-                                    </div>
-                                </div>
-                            </div><!-- End tab content item -->
-
-                            <div class="tab-pane fade" id="features-tab-2" role="tabpanel">
-                                <div class="row">
-                                    <div
-                                        class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
-                                        <h3>灯控——绚丽的舞台效果的制造者</h3>
-                                        <p class="fst-italic">
-                                            灯控掌握着舞台的整体视觉效果，你的一切操作都直接关系到观众的视觉效果镜头拍摄效果，现场没有特效做，全靠灯光两只手
-                                            <br><br>以下是岗位要求
-                                        </p>
-
-                                    </div>
-                                    <div class="col-lg-6 order-1 order-lg-2 text-center">
-                                        <img src="assets/img/loading.jpg" resourcesrc="assets/images/6706139535762.jpg"
-                                            alt="" class="img-fluid">
-                                    </div>
-                                </div>
-                            </div><!-- End tab content item -->
-
-                            <div class="tab-pane fade" id="features-tab-3" role="tabpanel">
-                                <div class="row">
-                                    <div
-                                        class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
-                                        <h3>音控——观众听觉的主宰者</h3>
-                                        <p class="fst-italic">
-                                            音控负责着整个观众区的听觉效果，每一次推子的推动都将改变台下人对演出的整体感受
-                                            <br><br>以下是岗位要求
-                                        </p>
-
-                                    </div>
-                                    <div class="col-lg-6 order-1 order-lg-2 text-center">
-                                        <img src="assets/img/loading.jpg" resourcesrc="assets/images/670613827a79b.jpg"
-                                            alt="" class="img-fluid">
-                                    </div>
-                                </div>
-                            </div><!-- End tab content item -->
-
-                            <div class="tab-pane fade" id="features-tab-4" role="tabpanel">
-                                <div class="row">
-                                    <div
-                                        class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
-                                        <h3>机动协调——后台与前台的连线者</h3>
-                                        <p class="fst-italic">
-                                            机动协调负责外场的特情处置，临时需求的第一线，在后台需要帮助时提供第一时间的援助，功不可没
-                                            <br><br>以下是岗位要求
-                                        </p>
-
-                                    </div>
-                                    <div class="col-lg-6 order-1 order-lg-2 text-center">
-                                        <img src="assets/img/loading.jpg" resourcesrc="assets/images/670f8f9d05b64.jpg"
-                                            alt="" class="img-fluid">
-                                    </div>
-                                </div>
-                            </div><!-- End tab content item -->
-
-                        </div>
-                    </div>
                 </div>
             </div>
 
         </div>
-        <!-- 
-
-
-
-
-         -->
+        <!-- -->
         <!-- 待整理 -->
         <div></div>
 
-        </section><!-- /Features Section -->
-
+        <div id="活动实拍" class="mt-2 mb-2">
+            <br>
+            <hr>
+            <br>
+            <br>
+        </div>
         <!-- Projects Section -->
         <section id="projects" class="projects section">
 
@@ -432,13 +353,8 @@
             </div><!-- End Section Title -->
 
             <div class="container">
-
                 <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
-
-
-
                     <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="100">
-
                         <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-remodeling">
                             <div class="portfolio-content h-100">
 
@@ -665,7 +581,7 @@
                                     </p>
                                 </div>
                             </div>
-                        </div>->
+                        </div>
                         <!--
               <div class="swiper-slide">
               <div class="testimonial-wrap">
@@ -699,102 +615,9 @@
 
 
     </div>
-
     <!-- 脚本区 -->
-    <script>
-        // 页面加载完成后执行
-        window.addEventListener('load', function () {
-            //定义函数
-            //// <summary>
-            /// 设置图片
-            /// </summary>
-            /// <param name="element">元素</param>
-            /// <param name="url">图片地址</param>
-            /// <returns>是否成功</returns>
-            const setimg = async (element, url) => {
-                const alt = element.alt;
-                element.src = '';
-                element.alt = '加载中...';
-                try {
-                    const response = await fetch(url);
-                    if (!response.ok) throw new Error(`状态码异常:${response.status}`)
-                    const blob = await response.blob();
-                    const objectUrl = URL.createObjectURL(blob);
-                    element.src = objectUrl;
-                    element.alt = alt;
-                    element.title = `点击查看原图`;
-                    // element.onclick = () => {
-
-                    // }
-                    element.onload = () => URL.revokeObjectURL(objectUrl);
-                    return true;
-                }
-                catch (e) {
-                    element.alt = '点击重载';
-                    console.warn('图片加载失败', e)
-                    element.onclick = () => {
-                        setimg(element, url);
-                    }
-                    return false;
-                }
-            }
-            // 获取所有 img 标签
-            const images = document.querySelectorAll('img[resourcesrc]');
-            images.forEach(function (img) {
-                const realSrc = img.getAttribute('resourcesrc');
-                if (realSrc) {
-                    setimg(img, realSrc);
-                }
-            });
-        });
-    </script>
     <!-- <script type="module" src='assets/vue@3.5.16/vue.global.js'></script> -->
-    <script>
-        const servicecards = document.getElementById('service-range-cards-container');
-
-        // 定义服务范围数据
-        const serviceRanges = [
-            { title: '班级活动排练', content: '在经过班主任（或相关负责人）与主管领导申请后，在小礼堂进行活动排练，使用舞台，更接近真实演出时的场景' },
-            { title: '年级会议', content: '场地承办军训开幕式、表彰大会、年级会议、文化教育、级部学生会会议 等' },
-            { title: '校级活动', content: '曾承办校庆、全体教职工会议、各级会议/学习等' },
-            { title: '外来活动', content: '他校/组织的各类典礼、晚会、节日庆典等；曾承办武警海口支队的文艺汇演等' },
-            { title: '更多活动', content: '随机出现的各类活动等你来迎接' },
-            // 可按需添加更多服务范围
-        ];
-
-
-        // 遍历服务范围数据并创建元素
-        serviceRanges.forEach(service => {
-            const card = document.createElement('div');
-            card.classList.add('col-lg-4', 'col-md-6', 'mt-1', 'mb-1');
-
-            card.innerHTML = `
-                <div class="card card-body">
-                    <h4 class="bloder-3">${service.title}</h4>
-                        <hr>
-                        <div>${service.content}</div>
-                </div>
-            `;
-            servicecards.appendChild(card);
-        })
-    </script>
+    <script src="/assets/js/app.js"></script>
 </body>
 
 </html>
-<!-- P(亲代):      <AaBb>    ×     <AaBb>
-              ↓           ↓
-配子类型: AB Ab aB ab    AB Ab aB ab
-
-F1:
-         |  AB  |  Ab  |  aB  |  ab
--------------------------------------
-  AB    |AABB  |AABb  |AaBB  |AaBb
-  Ab    |AABb  |AAbb  |AaBb  |Aabb
-  aB    |AaBB  |AaBb  |aaBB  |aaBb
-  ab    |AaBb  |Aabb  |aaBb  |aabb
-
-基因型及比例:
-AABB : AABb : AAbb : AaBB : AaBb : Aabb : aaBB : aaBb : aabb = 1 : 2 : 1 : 2 : 4 : 2 : 1 : 2 : 1
-
-表现型及比例（A、B 为显性）:
-A_B_ : A_bb : aaB_ : aabb = 9 : 3 : 3 : 1 -->

@@ -1,0 +1,88 @@
+// 页面加载完成后执行
+window.addEventListener('load', function () {
+    const setimg = async (element, url) => {
+        const alt = element.alt;
+        element.src = '';
+        element.alt = '加载中...';
+        try {
+            const response = await fetch(url);
+            if (!response.ok) throw new Error(`状态码异常:${response.status}`)
+            const blob = await response.blob();
+            const objectUrl = URL.createObjectURL(blob);
+            element.src = objectUrl;
+            element.alt = alt;
+            element.title = `点击查看原图`;
+            // element.onclick = () => {
+
+            // }
+            element.onload = () => URL.revokeObjectURL(objectUrl);
+            return true;
+        }
+        catch (e) {
+            element.alt = '点击重载';
+            console.warn('图片加载失败', e)
+            element.onclick = () => {
+                setimg(element, url);
+            }
+            return false;
+        }
+    }
+    // 获取所有 img 标签
+    const images = document.querySelectorAll('img[resourcesrc]');
+    images.forEach(function (img) {
+        const realSrc = img.getAttribute('resourcesrc');
+        // 防止误伤正常图片
+        if (realSrc) {
+            setimg(img, realSrc);
+        }
+    });
+});
+
+window.addEventListener('load', function () {
+
+    const servicecards = document.getElementById('service-range-cards-container');
+
+    // 定义服务范围数据
+    const serviceRanges = [
+        { title: '班级活动排练', content: '在经过班主任（或相关负责人）与主管领导申请后，在小礼堂进行活动排练，使用舞台，更接近真实演出时的场景' },
+        { title: '年级会议', content: '场地承办军训开幕式、表彰大会、年级会议、文化教育、级部学生会会议 等' },
+        { title: '校级活动', content: '曾承办校庆、全体教职工会议、各级会议/学习等' },
+        { title: '外来活动', content: '他校/组织的各类典礼、晚会、节日庆典等；曾承办武警海口支队的文艺汇演等' },
+        { title: '更多活动', content: '随机出现的各类活动等你来迎接' },
+        // 可按需添加更多服务范围
+    ];
+
+
+    // 遍历服务范围数据并创建元素
+    serviceRanges.forEach(service => {
+        const card = document.createElement('div');
+        card.classList.add('col-lg-4', 'col-md-6', 'mt-1', 'mb-1');
+
+        card.innerHTML = `
+                <div class="card card-body">
+                    <h4 class="bloder-3">${service.title}</h4>
+                        <hr>
+                        <div>${service.content}</div>
+                </div>
+            `;
+        servicecards.appendChild(card);
+    })
+});
+
+// P(亲代):      <AaBb>    ×     <AaBb>
+//               ↓           ↓
+// 配子类型: AB Ab aB ab    AB Ab aB ab
+
+// F1:
+//          |  AB  |  Ab  |  aB  |  ab
+// -------------------------------------
+//   AB    |AABB  |AABb  |AaBB  |AaBb
+//   Ab    |AABb  |AAbb  |AaBb  |Aabb
+//   aB    |AaBB  |AaBb  |aaBB  |aaBb
+//   ab    |AaBb  |Aabb  |aaBb  |aabb
+
+// 基因型及比例:
+// AABB : AABb : AAbb : AaBB : AaBb : Aabb : aaBB : aaBb : aabb = 1 : 2 : 1 : 2 : 4 : 2 : 1 : 2 : 1
+
+// 表现型及比例（A、B 为显性）:
+// A_B_ : A_bb : aaB_ : aabb = 9 : 3 : 3 : 1
