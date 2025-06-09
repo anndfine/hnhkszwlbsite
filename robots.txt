@@ -1,7 +1,5 @@
 User-agent: *
-Disallow: /private/
-Disallow: /admin/
-Disallow: /tmp/
+Disallow: /assets/images/
 Allow: /
 
 Sitemap: /sitemap.xml
