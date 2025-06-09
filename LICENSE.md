@@ -31,9 +31,11 @@ License: [See full license here](./third-party-licenses/bootstrap-LICENSE)
 Source: https://github.com/twbs/bootstrap
 
 #### [Fontawesome](https://fontawesome.com)
+Copyright (c) 2024 Fonticons, Inc. (https://fontawesome.com)
 This project uses Font Awesome Free, which includes multiple licenses:
 - Icons: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)  
 - Fonts: [SIL OFL 1.1](http://scripts.sil.org/OFL)  
 - Code: [MIT License](https://opensource.org/licenses/MIT)  
 - Copyright notices and full licenses are available at:  
 - https://fontawesome.com/license/free.
+[See full license here](./third-party-licenses/fontawesome-LICENSE)  
