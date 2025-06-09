@@ -38,4 +38,4 @@ This project uses Font Awesome Free, which includes multiple licenses:
 - Code: [MIT License](https://opensource.org/licenses/MIT)  
 - Copyright notices and full licenses are available at:  
 - https://fontawesome.com/license/free.
-[See full license here](./third-party-licenses/fontawesome-LICENSE)  
+[See full license here](./third-party-licenses/FontAwesome-LICENSE)  
