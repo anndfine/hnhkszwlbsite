@@ -48,3 +48,8 @@
 ---
 
 感谢您对本项目的关注和支持！您的每一次贡献都让这个项目变得更好。
+
+> This project is licensed under the MIT License. See [LICENSE.md](LICENSE.md) for details.
+
+## Dependencies
+- [Bootstrap](https://getbootstrap.com/) (MIT License)
