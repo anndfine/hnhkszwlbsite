@@ -49,7 +49,10 @@
 
 感谢您对本项目的关注和支持！您的每一次贡献都让这个项目变得更好。
 
+---
+
 > This project is licensed under the MIT License. See [LICENSE.md](LICENSE.md) for details.
 
-## Dependencies
+## 使用的第三方资源
 - [Bootstrap](https://getbootstrap.com/) (MIT License)
+- [Font Awesome Free](https://fontawesome.com/) 图标（CC BY 4.0）、字体（SIL OFL 1.1）、代码（MIT）。
