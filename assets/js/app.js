@@ -51,6 +51,23 @@ window.addEventListener('load', function () {
     });
 });
 
+// 页面加载完成后执行
+window.addEventListener('load', function () {
+    // 获取所有带有 resourcesrc 属性的 img 标签
+    const starelements = document.querySelectorAll('star[data-star-amount]');
+    starelements.forEach(function (element) {
+        const amount = element.getAttribute('data-star-amount');
+        element.innerHTML = '';
+        element.style.color = "#ffc107";
+        for (let i = 0; i < amount; i++) {
+            const star = document.createElement('i');
+            star.classList.add('fa', 'fa-star');
+            star.innerHTML = "&nbsp;";
+            element.appendChild(star);
+        }
+    });
+});
+
 window.addEventListener('load', function () {
 
     const servicecards = document.getElementById('service-range-cards-container');
