@@ -1,40 +1,53 @@
 // 页面加载完成后执行
 window.addEventListener('load', function () {
+    async function autosetimg(element) {
+        // 获取预览图 URL
+        const imagepreviewsrc = element.getAttribute('preview-image-src');
+        // 获取真实图 URL
+        const realSrc = element.getAttribute('resourcesrc');
+        let url;
+        if (imagepreviewsrc) {
+            url = imagepreviewsrc;
+        } else if (realSrc) {
+            url = realSrc;
+        }
+        // 调用 setimg 函数设置图片
+        setimg(element, url);
+        if (imagepreviewsrc && realSrc) {
+            element.title = `点击查看原图`;
+            element.onclick = () => {
+                setimg(element, realSrc);
+            };
+        }
+    }
+
     const setimg = async (element, url) => {
         const alt = element.alt;
         element.src = '';
         element.alt = '加载中...';
         try {
             const response = await fetch(url);
-            if (!response.ok) throw new Error(`状态码异常:${response.status}`)
+            if (!response.ok) throw new Error(`状态码异常:${response.status}`);
             const blob = await response.blob();
             const objectUrl = URL.createObjectURL(blob);
             element.src = objectUrl;
             element.alt = alt;
-            element.title = `点击查看原图`;
-            // element.onclick = () => {
-
-            // }
             element.onload = () => URL.revokeObjectURL(objectUrl);
             return true;
-        }
-        catch (e) {
+        } catch (e) {
             element.alt = '点击重载';
-            console.warn('图片加载失败', e)
+            console.warn('图片加载失败', e);
             element.onclick = () => {
                 setimg(element, url);
-            }
+            };
             return false;
         }
-    }
-    // 获取所有 img 标签
+    };
+
+    // 获取所有带有 resourcesrc 属性的 img 标签
     const images = document.querySelectorAll('img[resourcesrc]');
     images.forEach(function (img) {
-        const realSrc = img.getAttribute('resourcesrc');
-        // 防止误伤正常图片
-        if (realSrc) {
-            setimg(img, realSrc);
-        }
+        autosetimg(img);
     });
 });
 
