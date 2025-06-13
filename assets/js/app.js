@@ -99,6 +99,32 @@ window.addEventListener('load', function () {
     })
 });
 
+window.addEventListener('load', function () {
+    var container = this.document.querySelectorAll('[data-tag="our-benefits-container"]')[0];
+    const content_element_group = container.querySelector('[data-tag="our-benefits-content"]');
+    const content_element = content_element_group.querySelectorAll('pre[data-tag="our-benefits-content-json"]');
+    content_element.forEach(one_element => {
+        var content_html = one_element.innerHTML;
+        content_html = content_html.replace(/'/g, '"');
+        const content_json = JSON.parse(content_html);
+        var element = this.document.createElement("div");
+        const _content = content_json
+        element.innerHTML = `
+        <div class="icon-box d-flex position-relative">
+            <div>
+                <h5><strong class="h5_5">${_content.title}</strong></h5>
+                <p>${_content.description}</p>
+            </div>
+        </div>
+        `;
+        container.appendChild(element);
+    });
+    return;
+});
+
+
+
+
 // P(亲代):      <AaBb>    ×     <AaBb>
 //               ↓           ↓
 // 配子类型: AB Ab aB ab    AB Ab aB ab
