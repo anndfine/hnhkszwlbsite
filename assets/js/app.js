@@ -122,7 +122,9 @@ window.addEventListener('load', function () {
     return;
 });
 
-
+import hall_of_fame_app from "/assets/js/hall_of_fame.js";
+hall_of_fame_app.test();
+hall_of_fame_app.main();
 
 
 // P(亲代):      <AaBb>    ×     <AaBb>
