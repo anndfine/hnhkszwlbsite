@@ -1,6 +1,10 @@
+.backgound-main {
+    background-color: #e7dbe7;
+}
+
 .nav-link-text {
     display: block;
-    color: #000000;
+    color: #191a19;
 }
 
 .carousel-overlay {
@@ -55,13 +59,14 @@
     color: #534b52;
 }
 
-.h5_5{
-    
+.h5_5 {
+
     font-weight: 700;
     margin-bottom: 10px;
     font-size: 18px;
 
 }
+
 /* 优化 */
 hr {
     margin: 8px 0;
@@ -94,4 +99,3 @@ hr {
 .h-45 {
     height: 45% !important;
 }
-
