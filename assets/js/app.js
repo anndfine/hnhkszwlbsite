@@ -86,12 +86,12 @@ window.addEventListener('load', function () {
     // 遍历服务范围数据并创建元素
     serviceRanges.forEach(service => {
         const card = document.createElement('div');
-        card.classList.add('col-lg-4', 'col-md-6', 'mt-1', 'mb-1');
+        card.classList.add('col-lg-4', 'col-md-6', 'mt-1', 'mb-1','d-flex');
 
         card.innerHTML = `
-                <div class="card card-body">
-                    <h4 class="bloder-3">${service.title}</h4>
-                        <hr>
+                <div class="card card-body h-100 w-100 p-4">
+                    <h4>${service.title}</h4>
+                         <hr class="col-3 text-warning" style="border-top-width: 4px;opacity: 0.6;">
                         <div>${service.content}</div>
                 </div>
             `;
