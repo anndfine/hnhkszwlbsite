@@ -45,26 +45,28 @@
         <hr>
     </nav>
 
-    <div class="mt-4 pt-4 mutedtext"> <!-- 添加顶部间距以避开固定导航栏 -->
+    <div class="mutedtext"> <!-- 添加顶部间距以避开固定导航栏 -->
 
-        <!-- 外层容器 -->
-        <div class="_bg-white p-2 rounded mt-2 mb-2 min-vh-100">
+        <div class="_bg-white rounded min-vh-100">
             <!-- 轮播容器 -->
-            <div class="position-relative" style="height: 94vh;">
+            <div class="position-relative" style="height: 100vh;">
                 <!-- 轮播图 -->
                 <div class="carousel slide h-100" data-bs-ride="carousel" id="fullscreenCarousel">
                     <div class="carousel-inner h-100">
                         <div class="carousel-item h-100">
                             <img resourcesrc="assets/images/slide/670613988744c.jpg" class="d-block w-100 h-100"
-                                style="object-fit: cover;">
+                                style="object-fit: cover;"
+                                src="blob:http://127.0.0.1:3000/2abde37c-1f28-4c0f-9e45-4de650519172" alt="">
                         </div>
-                        <div class="carousel-item active h-100">
+                        <div class="carousel-item h-100 active">
                             <img resourcesrc="assets/images/slide/670613968e908.jpg" class="d-block w-100 h-100"
-                                style="object-fit: cover;">
+                                style="object-fit: cover;"
+                                src="blob:http://127.0.0.1:3000/72c39c34-db48-4901-a699-2aeebf30db70" alt="">
                         </div>
                         <div class="carousel-item h-100">
                             <img resourcesrc="assets/images/slide/670613950c57a.jpg" class="d-block w-100 h-100"
-                                style="object-fit: cover;">
+                                style="object-fit: cover;"
+                                src="blob:http://127.0.0.1:3000/5df42efa-5b20-4f1f-8c7b-516a1a568ce2" alt="">
                         </div>
                     </div>
                 </div>
@@ -74,18 +76,25 @@
 
                 <!-- 主体内容 , 覆盖在轮播图上的内容 -->
                 <div class="position-absolute top-50 start-50 translate-middle text-center text-white w-100 px-3  z-2">
-                    <h1>欢迎来到网络部</h1>
-                    <h1 class="text-warning strong">——</h1>
-                    <p>网络部全名 “ 海口市第四中学团委学生会网络管理部 ”，隶属于 海口市第四中学团委学生会。 </p>
-                    <a href="#关于" target="_blank" class="btn btn-warning">加入我们</a>
+                    <strong style="font-size: 4rem;">欢迎来到网络部</strong>
+                    <center>
+                        <hr class="col-1 text-warning strong" style="border-top-width: 4px;opacity: 0.8;">
+                    </center>
+                    <p class="mt-4" style="opacity: .75;">网络部全名 “ 海口市第四中学团委学生会网络管理部 ”，隶属于 海口市第四中学团委学生会。 </p>
+                    <a href="#关于" class="btn btn-outline-warning text-white"
+                        style="border-width: 0.2rem;border-radius: 25px;">
+                        <div class="p-2 ms-2 me-2">加入我们</div>
+                    </a>
                 </div>
             </div>
         </div>
 
-
         <div class="_bg-white p-2 rounded mt-2 mb-2"> <!-- 内容区域背景 -->
             <div class="p-3 text-center">
-                <h1><i class="text-warning">-</i>&nbsp;&nbsp;<strong>我们的工作</strong>&nbsp;<i class="text-warning">-</i>
+                <h1 class="d-flex align-items-center justify-content-center">
+                    <span class="border-top border-warning border-2 me-3" style="width: 50px;"></span>
+                    <strong class="text-dark">我们的工作</strong>
+                    <span class="border-top border-warning border-2 ms-3" style="width: 50px;"></span>
                 </h1>
                 <div>使用教学楼小礼堂的活动时的设备操作</div>
                 <div>学生会使用一楼会议室时的设备操作</div>
@@ -94,9 +103,9 @@
 
             <div class="container">
 
-                <div class="row gy-4">
+                <div class="row gy-4 d-flex">
                     <div class="col-lg-6">
-                        <div class="card">
+                        <div class="card h-100 w-100">
                             <div class="col-xl-5 img-fillcontainer img-max300px">
                                 <img resourcesrc="assets/images/67061393e3737.jpg">
                             </div>
@@ -110,7 +119,7 @@
                     </div>
 
                     <div class="col-lg-6" data-aos-delay="100">
-                        <div class="card">
+                        <div class="card h-100 w-100">
                             <div class="col-xl-5 img-fillcontainer img-max300px">
                                 <img resourcesrc="assets/images/67061c054b3b3.jpg">
                             </div>
@@ -124,7 +133,7 @@
                     </div>
 
                     <div class="col-lg-6">
-                        <div class="card">
+                        <div class="card h-100 w-100">
                             <div class="col-xl-5 img-fillcontainer img-max300px">
                                 <img resourcesrc="assets/images/670613827a79b.jpg">
                             </div>
@@ -138,7 +147,7 @@
                     </div>
 
                     <div class="col-lg-6">
-                        <div class="card">
+                        <div class="card h-100 w-100">
                             <div class="col-xl-5 img-fillcontainer img-max300px">
                                 <img resourcesrc="assets/images/67061383c525d.jpg">
                             </div>
@@ -339,7 +348,7 @@
                             <div class="portfolio-content h-100">
 
                                 <img preview-image-src="assets/images/preview_6706146ba031d.jpg"
-                                    resourcesrc="assets/images/6706146ba031d.jpg" class="img-fluid" />
+                                    resourcesrc="assets/images/6706146ba031d.jpg" class="img-fluid w-100" />
                                 <div class="portfolio-info">
                                     <h4>合照</h4>
                                     <p>24届喊楼时网络部23，24，25届的合照</p>
@@ -351,7 +360,7 @@
                         <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-construction">
                             <div class="portfolio-content h-100">
                                 <img preview-image-src="assets/images/preview_67061383c525d.jpg"
-                                    resourcesrc="assets/images/67061383c525d.jpg" class="img-fluid" alt="">
+                                    resourcesrc="assets/images/67061383c525d.jpg" class="img-fluid w-100" alt="">
                                 <div class="portfolio-info">
                                     <h4>活动现场</h4>
                                     <p>校庆时的中控台</p>
@@ -363,7 +372,7 @@
                         <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-repairs">
                             <div class="portfolio-content h-100">
                                 <img preview-image-src="assets/images/preview_670613960ec62.jpg"
-                                    resourcesrc="assets/images/670613960ec62.jpg" class="img-fluid" alt="">
+                                    resourcesrc="assets/images/670613960ec62.jpg" class="img-fluid w-100" alt="">
                                 <div class="portfolio-info">
                                     <h4>活动现场</h4>
                                     <p>校园十大歌手导播与灯控</p>
@@ -375,7 +384,7 @@
                         <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-design">
                             <div class="portfolio-content h-100">
                                 <img preview-image-src="assets/images/preview_670613950c57a.jpg"
-                                    resourcesrc="assets/images/670613950c57a.jpg" class="img-fluid" alt="">
+                                    resourcesrc="assets/images/670613950c57a.jpg" class="img-fluid w-100" alt="">
                                 <div class="portfolio-info">
                                     <h4>活动现场</h4>
                                     <p>校运会社团日的灯控台</p>
@@ -387,7 +396,7 @@
                         <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-remodeling">
                             <div class="portfolio-content h-100">
                                 <img preview-image-src="assets/images/preview_67061396b32d7.jpg"
-                                    resourcesrc="assets/images/67061396b32d7.jpg" class="img-fluid" alt="">
+                                    resourcesrc="assets/images/67061396b32d7.jpg" class="img-fluid w-100" alt="">
                                 <div class="portfolio-info">
                                     <h4>活动现场</h4>
                                     <p>接待外来活动的自带设备</p>
@@ -399,7 +408,7 @@
                         <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-construction">
                             <div class="portfolio-content h-100">
                                 <img preview-image-src="assets/images/preview_67061381b0bc2.jpg"
-                                    resourcesrc="assets/images/67061381b0bc2.jpg" class="img-fluid" alt="">
+                                    resourcesrc="assets/images/67061381b0bc2.jpg" class="img-fluid w-100"alt="">
                                 <div class="portfolio-info">
                                     <h4>操作练习</h4>
                                     <p>使用雾机进行练习时的操作</p>
