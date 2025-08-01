@@ -52,6 +52,7 @@ window.addEventListener('load', function () {
 });
 
 // 页面加载完成后执行
+
 window.addEventListener('load', function () {
     // 获取所有带有 resourcesrc 属性的 img 标签
     const starelements = document.querySelectorAll('star[data-star-amount]');
@@ -61,7 +62,7 @@ window.addEventListener('load', function () {
         element.style.color = "#ffc107";
         for (let i = 0; i < amount; i++) {
             const star = document.createElement('i');
-            star.classList.add('fa', 'fa-star');
+            star.classList.add('bi', 'bi-star-fill');
             star.innerHTML = "&nbsp;";
             element.appendChild(star);
         }
