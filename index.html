@@ -96,80 +96,161 @@
                 </div>
             </div>
         </div>
-
-        <div class="_bg-white p-2 rounded mt-2 mb-2" id="我们的工作"> <!-- 内容区域背景 -->
-            <div class="p-3 text-center">
-                <h1 class="d-flex align-items-center justify-content-center">
-                    <span class="border-top border-warning border-2 me-3" style="width: 50px;"></span>
-                    <strong class="text-dark">我们的工作</strong>
-                    <span class="border-top border-warning border-2 ms-3" style="width: 50px;"></span>
+        <!-- 我们的工作板块 -->
+        <section class="bg-white p-4 rounded-4 shadow-sm mt-4 mb-4" id="我们的工作">
+            <!-- 标题区域 -->
+            <div class="text-center mb-5">
+                <h1 class="display-5 fw-bold mb-3 position-relative d-inline-block">
+                    <!-- <span
+                        class="position-absolute top-50 start-0 translate-middle-y w-50 border-top border-2 border-warning opacity-75"></span> -->
+                    <span class="px-3">我们的工作</span>
+                    <!-- <span
+                        class="position-absolute top-50 end-0 translate-middle-y w-50 border-top border-2 border-warning opacity-75"></span> -->
                 </h1>
-                <div>使用教学楼小礼堂的活动时的设备操作</div>
-                <div>学生会使用一楼会议室时的设备操作</div>
-                <div>校运会社团日时设备辅助操作等大型活动</div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="d-flex flex-column flex-md-row justify-content-center gap-3 text-muted">
+                            <span class="d-flex align-items-center">
+                                <i class="bi bi-check-circle-fill text-warning me-2"></i>教学楼小礼堂活动设备操作
+                            </span>
+                            <span class="d-flex align-items-center">
+                                <i class="bi bi-check-circle-fill text-warning me-2"></i>学生会会议室设备操作
+                            </span>
+                            <span class="d-flex align-items-center">
+                                <i class="bi bi-check-circle-fill text-warning me-2"></i>校运会社团日设备辅助
+                            </span>
+                        </div>
+                    </div>
+                </div>
             </div>
 
+            <!-- 工作内容卡片 -->
             <div class="container">
-
-                <div class="row gy-4 d-flex">
+                <div class="row g-4">
+                    <!-- 小礼堂后台操作 -->
                     <div class="col-lg-6">
-                        <div class="card h-100 w-100">
-                            <div class="col-xl-5 img-fillcontainer img-max300px">
-                                <img resourcesrc="assets/images/67061393e3737.jpg">
-                            </div>
-                            <div class="col-xl-7 d-flex align-items-center">
-                                <div class="card-body">
-                                    <h4><strong>小礼堂后台操作</strong></h4>
-                                    <p>使用小礼堂时设备的控制与保障</p>
+                        <div class="card h-100 border-0 shadow-sm overflow-hidden">
+                            <div class="row g-0 h-100">
+                                <div class="col-md-5">
+                                    <img src="assets/images/67061393e3737.jpg" class="img-fluid h-100 object-fit-cover"
+                                        alt="小礼堂后台操作">
+                                </div>
+                                <div class="col-md-7 d-flex align-items-center">
+                                    <div class="card-body p-4">
+                                        <div class="d-flex align-items-center mb-3">
+                                            <i class="bi bi-mic-fill fs-4 text-primary me-3"></i>
+                                            <h4 class="card-title mb-0 fw-bold">小礼堂后台操作</h4>
+                                        </div>
+                                        <p class="card-text text-muted">使用小礼堂时设备的控制与保障，确保活动顺利进行</p>
+                                        <ul class="list-unstyled mt-3">
+                                            <li class="mb-2">
+                                                <i class="bi bi-check-circle text-success me-2"></i>音响系统调试与控制
+                                            </li>
+                                            <li class="mb-2">
+                                                <i class="bi bi-check-circle text-success me-2"></i>灯光效果设计与执行
+                                            </li>
+                                            <li class="mb-2">
+                                                <i class="bi bi-check-circle text-success me-2"></i>舞台设备技术支持
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-lg-6" data-aos-delay="100">
-                        <div class="card h-100 w-100">
-                            <div class="col-xl-5 img-fillcontainer img-max300px">
-                                <img resourcesrc="assets/images/67061c054b3b3.jpg">
-                            </div>
-                            <div class="col-xl-7 d-flex align-items-center">
-                                <div class="card-body">
-                                    <h4><strong>一楼会议室设备操作</strong></h4>
-                                    <p>学生会使用一楼会议室时在操作位进行控制与保障</p>
+                    <!-- 一楼会议室设备操作 -->
+                    <div class="col-lg-6">
+                        <div class="card h-100 border-0 shadow-sm overflow-hidden">
+                            <div class="row g-0 h-100">
+                                <div class="col-md-5">
+                                    <img src="assets/images/67061c054b3b3.jpg" class="img-fluid h-100 object-fit-cover"
+                                        alt="一楼会议室设备操作">
+                                </div>
+                                <div class="col-md-7 d-flex align-items-center">
+                                    <div class="card-body p-4">
+                                        <div class="d-flex align-items-center mb-3">
+                                            <i class="bi bi-projector-fill fs-4 text-primary me-3"></i>
+                                            <h4 class="card-title mb-0 fw-bold">一楼会议室设备操作</h4>
+                                        </div>
+                                        <p class="card-text text-muted">学生会使用一楼会议室时在操作位进行控制与保障</p>
+                                        <ul class="list-unstyled mt-3">
+                                            <li class="mb-2">
+                                                <i class="bi bi-check-circle text-success me-2"></i>会议设备技术支持
+                                            </li>
+                                            <li class="mb-2">
+                                                <i class="bi bi-check-circle text-success me-2"></i>显示系统管理
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
+                    <!-- 校运会社团日 -->
                     <div class="col-lg-6">
-                        <div class="card h-100 w-100">
-                            <div class="col-xl-5 img-fillcontainer img-max300px">
-                                <img resourcesrc="assets/images/670613827a79b.jpg">
-                            </div>
-                            <div class="col-xl-7 d-flex align-items-center">
-                                <div class="card-body">
-                                    <h4><strong>校运会社团日</strong></h4>
-                                    <p>在校运会社团日时，协调并辅助租借的设备</p>
+                        <div class="card h-100 border-0 shadow-sm overflow-hidden">
+                            <div class="row g-0 h-100">
+                                <div class="col-md-5">
+                                    <img src="assets/images/670613827a79b.jpg" class="img-fluid h-100 object-fit-cover"
+                                        alt="校运会社团日">
+                                </div>
+                                <div class="col-md-7 d-flex align-items-center">
+                                    <div class="card-body p-4">
+                                        <div class="d-flex align-items-center mb-3">
+                                            <i class="bi bi-trophy-fill fs-4 text-primary me-3"></i>
+                                            <h4 class="card-title mb-0 fw-bold">校运会社团日</h4>
+                                        </div>
+                                        <p class="card-text text-muted">在校运会社团日时，协调并辅助租借的设备</p>
+                                        <ul class="list-unstyled mt-3">
+                                            <li class="mb-2">
+                                                <i class="bi bi-check-circle text-success me-2"></i>活动舞台技术辅助
+                                            </li>
+                                            <li class="mb-2">
+                                                <i class="bi bi-check-circle text-success me-2"></i>紧急设备故障处理
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
+                    <!-- 更多未知的活动 -->
                     <div class="col-lg-6">
-                        <div class="card h-100 w-100">
-                            <div class="col-xl-5 img-fillcontainer img-max300px">
-                                <img resourcesrc="assets/images/67061383c525d.jpg">
-                            </div>
-                            <div class="col-xl-7 d-flex align-items-center">
-                                <div class="card-body">
-                                    <h4><strong>更多未知的活动</strong></h4>
-                                    <p>有更多的随机活动与事件等你发现</p>
+                        <div class="card h-100 border-0 shadow-sm overflow-hidden">
+                            <div class="row g-0 h-100">
+                                <div class="col-md-5">
+                                    <img src="assets/images/67061383c525d.jpg" class="img-fluid h-100 object-fit-cover"
+                                        alt="更多未知的活动">
+                                </div>
+                                <div class="col-md-7 d-flex align-items-center">
+                                    <div class="card-body p-4">
+                                        <div class="d-flex align-items-center mb-3">
+                                            <i class="bi bi-stars fs-4 text-primary me-3"></i>
+                                            <h4 class="card-title mb-0 fw-bold">更多未知的活动</h4>
+                                        </div>
+                                        <p class="card-text text-muted">有更多的随机活动与事件等你发现</p>
+                                        <ul class="list-unstyled mt-3">
+                                            <li class="mb-2">
+                                                <i class="bi bi-check-circle text-success me-2"></i>校园文化活动支持
+                                            </li>
+                                            <li class="mb-2">
+                                                <i class="bi bi-check-circle text-success me-2"></i>学术讲座技术保障
+                                            </li>
+                                            <li class="mb-2">
+                                                <i class="bi bi-check-circle text-success me-2"></i>创新活动技术探索
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
 
         <!-- 服务范围 -->
 
@@ -274,16 +355,12 @@
                                                             <div class="stat-label">专业岗位</div>
                                                         </div>
                                                         <div class="col-md-3 col-6 mb-3">
-                                                            <div class="stat-value">30+</div>
+                                                            <div class="stat-value">30+<sup>*</sup></div>
                                                             <div class="stat-label">部门成员</div>
                                                         </div>
                                                         <div class="col-md-3 col-6 mb-3">
                                                             <div class="stat-value">98%</div>
                                                             <div class="stat-label">活动成功率</div>
-                                                        </div>
-                                                        <div class="col-md-3 col-6 mb-3">
-                                                            <div class="stat-value">100+</div>
-                                                            <div class="stat-label">年度活动</div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -809,11 +886,17 @@
                     <strong class="px-1 sitename">海口市第四中学网络部</strong>
                     <span>&nbsp;All Rights Reserved</span>
                 </div>
+
                 <div>
                     <span class="nav-link-text" onclick="window.open('https://github.com/anndfine/hnhkszwlbsite')">
-                        <i class="fab fa-github">&nbsp;</i>
+                        <i class="bi bi-github">&nbsp;</i>
                         在Github上编辑此页
                     </span>
+                </div>
+            </div>
+            <div class="container" style="opacity: 0.70;">
+                <div class="text-muted small mt-3">
+                    <sup>*</sup> 仅统计最近三届，数据统计截止至2025年8月
                 </div>
             </div>
         </footer>

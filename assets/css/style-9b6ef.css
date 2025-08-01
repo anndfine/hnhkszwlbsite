@@ -1,3 +1,9 @@
+/*!
+ * hnhkszwlbsite v1.0.0 (https://wlb.yt43700.top/)
+ * Copyright 2025 anndfine
+ * Licensed under MIT (https://github.com/anndfine/hnhkszwlbsite/blob/main/LICENSE.md)
+ */
+
 .backgound-main {
     background-color: rgb(255, 253, 254);
 }
@@ -100,7 +106,7 @@ hr {
     height: 45% !important;
 }
 
-/* 我们的工作 */
+/* 岗位 */
 
 .job-section {
     background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
