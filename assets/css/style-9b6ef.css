@@ -99,3 +99,136 @@ hr {
 .h-45 {
     height: 45% !important;
 }
+
+/* 我们的工作 */
+
+.job-section {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 3rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.section-title {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 2.5rem;
+}
+
+.section-title::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #0d6efd, #6f42c1);
+    border-radius: 2px;
+}
+
+.job-tabs .nav-tabs {
+    border-bottom: 2px solid #dee2e6;
+    margin-bottom: 1.5rem;
+}
+
+.job-tabs .nav-link {
+    color: #495057;
+    font-weight: 500;
+    padding: 1rem 1.5rem;
+    border: none;
+    border-radius: 0;
+    position: relative;
+    transition: all 0.3s;
+}
+
+.job-tabs .nav-link:hover {
+    color: #0d6efd;
+    background-color: rgba(13, 110, 253, 0.05);
+}
+
+.job-tabs .nav-link.active {
+    color: #0d6efd;
+    background-color: transparent;
+    border: none;
+}
+
+.job-tabs .nav-link.active::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: #0d6efd;
+    border-radius: 2px 2px 0 0;
+}
+
+.job-card {
+    border-radius: 0.75rem;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.05);
+    margin-bottom: 1.5rem;
+    background: #fff;
+}
+
+.job-card .card-header {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    background-color: rgba(13, 110, 253, 0.03);
+}
+
+.job-card .job-icon {
+    font-size: 2.5rem;
+    opacity: 0.8;
+    color: #0d6efd;
+}
+
+.requirement-item {
+    border-bottom: 1px dashed #e9ecef;
+    padding: 0.75rem 0;
+}
+
+.requirement-item:last-child {
+    border-bottom: none;
+}
+
+.requirement-item .bi {
+    color: #198754;
+    font-size: 1.25rem;
+    margin-right: 0.75rem;
+}
+
+.skill-badge {
+    background-color: rgba(13, 110, 253, 0.1);
+    color: #0d6efd;
+    font-weight: 500;
+    border-radius: 50px;
+}
+
+.stats-container {
+    background-color: rgba(13, 110, 253, 0.03);
+    border-radius: 0.5rem;
+    padding: 1.25rem;
+}
+
+.stat-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #0d6efd;
+}
+
+.stat-label {
+    font-size: 0.85rem;
+    color: #6c757d;
+}
+
+@media (max-width: 768px) {
+    .job-tabs .nav-link {
+        padding: 0.75rem;
+        font-size: 0.9rem;
+    }
+
+    .job-card .job-title {
+        font-size: 1.5rem;
+    }
+}
