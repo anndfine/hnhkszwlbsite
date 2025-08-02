@@ -3,21 +3,8 @@
     <!-- 首页 -->
     <url>
         <loc>https://hkszwlb.anndfine.top</loc>
-        <lastmod>2025-06-05</lastmod>
+        <lastmod>2025-08-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>1.0</priority>
-    </url>
-    <!-- 其他页面示例，可按需添加 -->
-    <url>
-        <loc>https://hkszwlb.anndfine.top</loc>
-        <lastmod>2025-06-05</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.4</priority>
-    </url>
-    <url>
-        <loc>https://hkszwlb.anndfine.top</loc>
-        <lastmod>2025-06-05</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.2</priority>
     </url>
 </urlset>
