@@ -69,64 +69,133 @@ window.addEventListener('load', function () {
     });
 });
 
-window.addEventListener('load', function () {
-
-    const servicecards = document.getElementById('service-range-cards-container');
-
-    // 定义服务范围数据
-    const serviceRanges = [
-        { title: '班级活动排练', content: '在经过班主任（或相关负责人）与主管领导申请后，在小礼堂进行活动排练，使用舞台，更接近真实演出时的场景' },
-        { title: '年级会议', content: '场地承办军训开幕式、表彰大会、年级会议、文化教育、级部学生会会议 等' },
-        { title: '校级活动', content: '曾承办校庆、全体教职工会议、各级会议/学习等' },
-        { title: '外来活动', content: '他校/组织的各类典礼、晚会、节日庆典等；曾承办武警海口支队的文艺汇演等' },
-        { title: '更多活动', content: '随机出现的各类活动等你来迎接' },
-        // 可按需添加更多服务范围
-    ];
-
-
-    // 遍历服务范围数据并创建元素
-    serviceRanges.forEach(service => {
-        const card = document.createElement('div');
-        card.classList.add('col-lg-4', 'col-md-6', 'mt-1', 'mb-1','d-flex');
-
-        card.innerHTML = `
-                <div class="card card-body h-100 w-100 p-4">
-                    <h4>${service.title}</h4>
-                         <hr class="col-3 text-warning" style="border-top-width: 4px;opacity: 0.6;">
-                        <div>${service.content}</div>
-                </div>
-            `;
-        servicecards.appendChild(card);
-    })
-});
-
-window.addEventListener('load', function () {
-    var container = this.document.querySelectorAll('[data-tag="our-benefits-container"]')[0];
-    const content_element_group = container.querySelector('[data-tag="our-benefits-content"]');
-    const content_element = content_element_group.querySelectorAll('pre[data-tag="our-benefits-content-json"]');
-    content_element.forEach(one_element => {
-        var content_html = one_element.innerHTML;
-        content_html = content_html.replace(/'/g, '"');
-        const content_json = JSON.parse(content_html);
-        var element = this.document.createElement("div");
-        const _content = content_json
-        element.innerHTML = `
-        <div class="icon-box d-flex position-relative">
-            <div>
-                <h5><strong class="h5_5">${_content.title}</strong></h5>
-                <p>${_content.description}</p>
-            </div>
-        </div>
-        `;
-        container.appendChild(element);
-    });
-    return;
-});
-
 import hall_of_fame_app from "/assets/js/hall_of_fame.js";
 hall_of_fame_app.test();
 hall_of_fame_app.main();
 
+
+// 图片预览功能
+document.addEventListener('DOMContentLoaded', function () {
+    const imageModal = document.getElementById('imageModal');
+    const modalImage = document.getElementById('modalImage');
+    const modalTitle = document.getElementById('modalImageTitle');
+    const modalDescription = document.getElementById('modalImageDescription');
+    const imgLoading = document.getElementById('imgLoading');
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+
+    // 收集所有图片项
+    const galleryItems = Array.from(document.querySelectorAll('.waterfall-item'));
+    let currentIndex = 0;
+    let currentItems = [];
+
+    // 监听模态框显示事件
+    imageModal.addEventListener('show.bs.modal', function (event) {
+        const button = event.relatedTarget;
+
+        // 获取当前激活的筛选类别
+        const activeFilter = document.querySelector('.filter-btn.active').getAttribute('data-filter');
+
+        // 根据筛选条件获取当前可见的图片项
+        currentItems = galleryItems.filter(item => {
+            if (activeFilter === '*') return true;
+            return item.classList.contains(activeFilter.slice(1));
+        });
+
+        // 获取当前点击项的索引
+        const currentCard = button.closest('.waterfall-item');
+        currentIndex = currentItems.indexOf(currentCard);
+
+        // 加载当前图片
+        loadImage(button);
+    });
+
+    // 加载图片函数
+    function loadImage(button) {
+        // 获取数据属性
+        const title = button.getAttribute('data-title');
+        const description = button.getAttribute('data-description');
+        const previewSrc = button.getAttribute('data-preview');
+        const fullSrc = button.getAttribute('data-full');
+
+        // 设置模态框内容
+        modalTitle.textContent = title;
+        modalDescription.textContent = description;
+
+        // 显示加载状态
+        imgLoading.style.display = 'flex';
+
+        // 先加载预览图
+        modalImage.src = previewSrc;
+        modalImage.alt = title;
+
+        // 加载原图
+        const fullImage = new Image();
+        fullImage.onload = function () {
+            modalImage.src = fullSrc;
+            imgLoading.style.display = 'none';
+        };
+        fullImage.onerror = function () {
+            imgLoading.style.display = 'none';
+            console.error('大图加载失败:', fullSrc);
+        };
+        fullImage.src = fullSrc;
+    }
+
+    // 上一张按钮
+    prevBtn.addEventListener('click', function () {
+        if (currentItems.length <= 1) return;
+
+        currentIndex = (currentIndex - 1 + currentItems.length) % currentItems.length;
+        const prevButton = currentItems[currentIndex].querySelector('.view-btn');
+        loadImage(prevButton);
+    });
+
+    // 下一张按钮
+    nextBtn.addEventListener('click', function () {
+        if (currentItems.length <= 1) return;
+
+        currentIndex = (currentIndex + 1) % currentItems.length;
+        const nextButton = currentItems[currentIndex].querySelector('.view-btn');
+        loadImage(nextButton);
+    });
+
+    // 键盘导航
+    document.addEventListener('keydown', function (e) {
+        if (!imageModal.classList.contains('show')) return;
+
+        if (e.key === 'ArrowLeft') {
+            prevBtn.click();
+        } else if (e.key === 'ArrowRight') {
+            nextBtn.click();
+        } else if (e.key === 'Escape') {
+            bootstrap.Modal.getInstance(imageModal).hide();
+        }
+    });
+
+    // 简单的筛选功能
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const galleryItemsAll = document.querySelectorAll('.waterfall-item');
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', function () {
+            // 移除所有按钮的active类
+            filterBtns.forEach(b => b.classList.remove('active'));
+            // 为当前按钮添加active类
+            this.classList.add('active');
+
+            const filterValue = this.getAttribute('data-filter');
+
+            galleryItemsAll.forEach(item => {
+                if (filterValue === '*' || item.classList.contains(filterValue.slice(1))) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+    });
+});
 
 // P(亲代):      <AaBb>    ×     <AaBb>
 //               ↓           ↓
