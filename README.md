@@ -55,4 +55,4 @@
 
 ## 使用的第三方资源
 - [Bootstrap](https://getbootstrap.com/) (MIT License)
-- [Font Awesome Free](https://fontawesome.com/) 图标（CC BY 4.0）、字体（SIL OFL 1.1）、代码（MIT）。
+- [Bootstrap Icons](https://icons.fontawesome.com/) (MIT License)
