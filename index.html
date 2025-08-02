@@ -25,7 +25,6 @@
 <body class="backgound-main">
     <script src="https://cdn-cf.anndfine.top/resources/bootstrap/5.3.3-dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <!-- <script src="assets/vue@3.5.16/vue.global.js"></script> -->
 
     <link href="/assets/css/style-9b6ef.css" rel="stylesheet">
@@ -58,9 +57,9 @@
             </div>
         </div>
     </nav>
-    <div class="mutedtext"> <!-- 添加顶部间距以避开固定导航栏 -->
+    <main class="mutedtext"> <!-- 添加顶部间距以避开固定导航栏 -->
 
-        <div class="_bg-white rounded min-vh-100">
+        <section class="_bg-white rounded min-vh-100">
             <div class="position-relative" style="height: 100vh;">
                 <div class="carousel slide h-100" data-bs-ride="carousel" id="fullscreenCarousel">
                     <div class="carousel-inner h-100">
@@ -95,7 +94,7 @@
                     </a>
                 </div>
             </div>
-        </div>
+        </section>
         <!-- 我们的工作板块 -->
         <section class="bg-white p-4 rounded-4 shadow-sm mt-4 mb-4" id="我们的工作">
             <!-- 标题区域 -->
@@ -251,51 +250,214 @@
                 </div>
             </div>
         </section>
-
-        <!-- 服务范围 -->
-
-        <div class="_bg-white p-2 rounded mt-2 mb-2 min-vh-100">
-            <div class="container section-title aos-init aos-animate">
-                <h2>服务范围</h2>
-                <p>承办班级、年级、乃至校级和外来的活动</p>
-                <div class="row p-2 rounded mt-2 mb-2" id="service-range-cards-container">
-                    <!-- 服务范围卡片将在这里动态生成 -->
+        <!-- 服务范围板块 -->
+        <section id="服务范围" class="bg-white py-5">
+            <div class="container">
+                <!-- 标题区域 -->
+                <div class="text-center mb-5">
+                    <h2 class="display-5 fw-bold position-relative d-inline-block mb-3">
+                        <span
+                            class="position-absolute top-50 start-0 translate-middle-y w-25 border-top border-2 border-warning opacity-75"></span>
+                        <span class="px-3">服务范围</span>
+                        <span
+                            class="position-absolute top-50 end-0 translate-middle-y w-25 border-top border-2 border-warning opacity-75"></span>
+                    </h2>
+                    <p class="lead text-muted">承办班级、年级、乃至校级和外来的活动</p>
                 </div>
-            </div>
-        </div>
 
-        <div class="container" id="benefits">
-            <div class="row justify-content-around gy-4">
-                <img resourcesrc="assets/images/67061382aff2c.jpg"
-                    class=" col-lg-6 d-flex align-items-center justify-content-center overflow-hidden object-fit-contain">
+                <!-- 服务范围卡片 -->
+                <div class="row g-4">
+                    <!-- 班级活动排练 -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="card h-100 border-0 shadow-sm">
+                            <div class="card-body p-4">
+                                <div class="d-flex align-items-center mb-3">
+                                    <i class="bi bi-people-fill fs-4 text-primary me-3"></i>
+                                    <h4 class="mb-0 fw-bold">班级活动排练</h4>
+                                </div>
+                                <hr class="my-3 border-warning opacity-75" style="border-top-width: 3px;">
+                                <p class="card-text">
+                                    在经过班主任（或相关负责人）与主管领导申请后，在小礼堂进行活动排练，使用舞台，更接近真实演出时的场景。
+                                </p>
+                                <div class="mt-3">
+                                    <span class="badge bg-light text-dark border me-2">小礼堂</span>
+                                    <span class="badge bg-light text-dark border">舞台排练</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-                <div class="col-lg-5 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="100">
-                    <h3><strong>各种福利</strong></h3>
-                    <p>独属于网络部成员的福利</p>
-                    <div class="container" data-tag="our-benefits-container">
-                        <div data-tag="our-benefits-content" style="display: none;">
-                            <pre
-                                data-tag="our-benefits-content-json">{"title":"活动室","description":"全部社团内最大的室内活动室——小礼堂，享受来自网络部的独特“排面”吧"}</pre>
-                            <pre
-                                data-tag="our-benefits-content-json">{"title":"技术培训","description":"我们欢迎技术爱好者加入我们！零基础也没关系，我们会为每位成员安排技术培训，快速掌握设备知识！"}</pre>
-                            <pre
-                                data-tag="our-benefits-content-json">{"title":"大型活动的“特殊待遇”","description":"源自于活动时我部门的特殊性，在一些大型活动时我们拥有部分前排座位，以及一定程度的“免票（须佩戴网络部专属工牌）”待遇"}</pre>
-                            <pre
-                                data-tag="our-benefits-content-json">{"title":"更多不定时掉落的彩蛋福利","description":"热情的部员间为你的生日捧场，向学长学姐学习一些生活中实用技巧，与兄弟部门的奇妙联合等你发现！"}</pre>
+                    <!-- 年级会议 -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="card h-100 border-0 shadow-sm">
+                            <div class="card-body p-4">
+                                <div class="d-flex align-items-center mb-3">
+                                    <i class="bi bi-mortarboard-fill fs-4 text-primary me-3"></i>
+                                    <h4 class="mb-0 fw-bold">年级会议</h4>
+                                </div>
+                                <hr class="my-3 border-warning opacity-75" style="border-top-width: 3px;">
+                                <p class="card-text">
+                                    场地承办军训开幕式、表彰大会、年级会议、文化教育、级部学生会会议等。
+                                </p>
+                                <div class="mt-3">
+                                    <span class="badge bg-light text-dark border me-2">会议</span>
+                                    <span class="badge bg-light text-dark border">表彰</span>
+                                    <span class="badge bg-light text-dark border">军训</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 校级活动 -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="card h-100 border-0 shadow-sm">
+                            <div class="card-body p-4">
+                                <div class="d-flex align-items-center mb-3">
+                                    <i class="bi bi-building-fill fs-4 text-primary me-3"></i>
+                                    <h4 class="mb-0 fw-bold">校级活动</h4>
+                                </div>
+                                <hr class="my-3 border-warning opacity-75" style="border-top-width: 3px;">
+                                <p class="card-text">
+                                    曾承办校庆、全体教职工会议、各级会议/学习等校级重要活动。
+                                </p>
+                                <div class="mt-3">
+                                    <span class="badge bg-light text-dark border me-2">校庆</span>
+                                    <span class="badge bg-light text-dark border">教职工会议</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 外来活动 -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="card h-100 border-0 shadow-sm">
+                            <div class="card-body p-4">
+                                <div class="d-flex align-items-center mb-3">
+                                    <i class="bi bi-door-open-fill fs-4 text-primary me-3"></i>
+                                    <h4 class="mb-0 fw-bold">外来活动</h4>
+                                </div>
+                                <hr class="my-3 border-warning opacity-75" style="border-top-width: 3px;">
+                                <p class="card-text">
+                                    承办他校/组织的各类典礼、晚会、节日庆典等；曾承办武警海口支队的文艺汇演等活动。
+                                </p>
+                                <div class="mt-3">
+                                    <span class="badge bg-light text-dark border me-2">外校活动</span>
+                                    <span class="badge bg-light text-dark border">文艺汇演</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 更多活动 -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="card h-100 border-0 shadow-sm">
+                            <div class="card-body p-4">
+                                <div class="d-flex align-items-center mb-3">
+                                    <i class="bi bi-stars fs-4 text-primary me-3"></i>
+                                    <h4 class="mb-0 fw-bold">更多活动</h4>
+                                </div>
+                                <hr class="my-3 border-warning opacity-75" style="border-top-width: 3px;">
+                                <p class="card-text">
+                                    随机出现的各类活动等你来迎接，为校园生活增添更多可能性。
+                                </p>
+                                <div class="mt-3">
+                                    <span class="badge bg-light text-dark border me-2">特别活动</span>
+                                    <span class="badge bg-light text-dark border">临时任务</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 预留空位保持布局平衡 -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="card h-100 border-0 bg-transparent shadow-none">
+                            <div class="card-body d-flex align-items-center justify-content-center">
+                                <div class="text-center">
+                                    <i class="bi bi-plus-circle-fill fs-1 text-muted opacity-25"></i>
+                                    <p class="mt-2 text-muted">期待更多服务可能</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </section>
 
-        </div>
+        <!-- 部门福利板块 -->
+        <section id="benefits" class="py-5 bg-light">
+            <div class="container">
+                <div class="row align-items-center g-4">
+                    <!-- 福利图片 -->
+                    <div class="col-lg-6">
+                        <div class="rounded-4 overflow-hidden shadow-sm">
+                            <img src="assets/images/67061382aff2c.jpg" class="img-fluid w-100 h-auto object-fit-cover"
+                                alt="网络部成员活动照片" loading="lazy">
+                        </div>
+                    </div>
 
+                    <!-- 福利内容 -->
+                    <div class="col-lg-5">
+                        <div class="ps-lg-4">
+                            <h2 class="fw-bold mb-3">部门成员福利</h2>
+                            <p class="lead text-muted mb-4">网络部成员专属的福利与支持</p>
+
+                            <div class="benefits-list">
+                                <!-- 活动室福利 -->
+                                <div class="benefit-item mb-4 p-4 bg-white rounded-4 shadow-sm">
+                                    <div class="d-flex align-items-start">
+                                        <i class="bi bi-house-door-fill fs-4 text-primary mt-1 me-3"></i>
+                                        <div>
+                                            <h4 class="h5 fw-bold mb-2">活动室使用权</h4>
+                                            <p class="mb-0 text-muted">可使用学校小礼堂作为活动空间，为部门活动提供便利场所。</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 技术培训 -->
+                                <div class="benefit-item mb-4 p-4 bg-white rounded-4 shadow-sm">
+                                    <div class="d-flex align-items-start">
+                                        <i class="bi bi-laptop-fill fs-4 text-primary mt-1 me-3"></i>
+                                        <div>
+                                            <h4 class="h5 fw-bold mb-2">技术培训</h4>
+                                            <p class="mb-0 text-muted">为新成员提供设备操作和技术培训，帮助快速掌握所需技能。</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 活动参与 -->
+                                <div class="benefit-item mb-4 p-4 bg-white rounded-4 shadow-sm">
+                                    <div class="d-flex align-items-start">
+                                        <i class="bi bi-ticket-perforated-fill fs-4 text-primary mt-1 me-3"></i>
+                                        <div>
+                                            <h4 class="h5 fw-bold mb-2">活动参与机会</h4>
+                                            <p class="mb-0 text-muted">参与学校各类大型活动的技术支持工作，获得实践经验。</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 团队交流 -->
+                                <div class="benefit-item p-4 bg-white rounded-4 shadow-sm">
+                                    <div class="d-flex align-items-start">
+                                        <i class="bi bi-people-fill fs-4 text-primary mt-1 me-3"></i>
+                                        <div>
+                                            <h4 class="h5 fw-bold mb-2">团队交流活动</h4>
+                                            <p class="mb-0 text-muted">参与部门组织的各类交流活动，结识志同道合的伙伴。</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
         <!-- 部门内岗位 -->
         <section class="job-section">
             <div class="container">
                 <div class="row justify-content-center mb-4">
                     <div class="col-lg-10 text-center">
                         <h2 class="section-title">部门内岗位</h2>
-                        <p class="lead text-muted">每个岗位都对应着不同的专业方面，共同组成高效的技术团队</p>
+                        <p class="lead text-muted">每个岗位都对应着不同的专业方面，共同组成高效的技术部门</p>
                     </div>
                 </div>
 
@@ -659,250 +821,494 @@
                 </div>
             </div>
         </section>
-        <!-- -->
-        <!-- 待整理 -->
-        <div></div>
 
 
-        <!-- Projects Section -->
-        <div class="container">
-            <div id="活动实拍" class="mt-2 mb-2">
-                <br>
-                <hr>
-                <br>
-                <br>
-            </div>
-            <!-- Section Title -->
-            <div class="container section-title">
-                <h2>活动实拍</h2>
-                <p>来自一些奇妙的拍摄者</p>
-            </div><!-- End Section Title -->
-
+        <!-- 活动实拍板块 -->
+        <section class="gallery-section" id="活动实拍">
             <div class="container">
-                <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
-                    <div class="row gy-4 isotope-container">
-                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-remodeling">
-                            <div class="portfolio-content h-100">
-
-                                <img preview-image-src="assets/images/preview_6706146ba031d.jpg"
-                                    resourcesrc="assets/images/6706146ba031d.jpg" class="img-fluid w-100" />
-                                <div class="portfolio-info">
-                                    <h4>合照</h4>
-                                    <p>24届喊楼时网络部23，24，25届的合照</p>
-
-                                </div>
-                            </div>
-                        </div><!-- End Portfolio Item -->
-
-                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-construction">
-                            <div class="portfolio-content h-100">
-                                <img preview-image-src="assets/images/preview_67061383c525d.jpg"
-                                    resourcesrc="assets/images/67061383c525d.jpg" class="img-fluid w-100" alt="">
-                                <div class="portfolio-info">
-                                    <h4>活动现场</h4>
-                                    <p>校庆时的中控台</p>
-
-                                </div>
-                            </div>
-                        </div><!-- End Portfolio Item -->
-
-                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-repairs">
-                            <div class="portfolio-content h-100">
-                                <img preview-image-src="assets/images/preview_670613960ec62.jpg"
-                                    resourcesrc="assets/images/670613960ec62.jpg" class="img-fluid w-100" alt="">
-                                <div class="portfolio-info">
-                                    <h4>活动现场</h4>
-                                    <p>校园十大歌手导播与灯控</p>
-
-                                </div>
-                            </div>
-                        </div><!-- End Portfolio Item -->
-
-                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-design">
-                            <div class="portfolio-content h-100">
-                                <img preview-image-src="assets/images/preview_670613950c57a.jpg"
-                                    resourcesrc="assets/images/670613950c57a.jpg" class="img-fluid w-100" alt="">
-                                <div class="portfolio-info">
-                                    <h4>活动现场</h4>
-                                    <p>校运会社团日的灯控台</p>
-
-                                </div>
-                            </div>
-                        </div><!-- End Portfolio Item -->
-
-                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-remodeling">
-                            <div class="portfolio-content h-100">
-                                <img preview-image-src="assets/images/preview_67061396b32d7.jpg"
-                                    resourcesrc="assets/images/67061396b32d7.jpg" class="img-fluid w-100" alt="">
-                                <div class="portfolio-info">
-                                    <h4>活动现场</h4>
-                                    <p>接待外来活动的自带设备</p>
-
-                                </div>
-                            </div>
-                        </div><!-- End Portfolio Item -->
-
-                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-construction">
-                            <div class="portfolio-content h-100">
-                                <img preview-image-src="assets/images/preview_67061381b0bc2.jpg"
-                                    resourcesrc="assets/images/67061381b0bc2.jpg" class="img-fluid w-100" alt="">
-                                <div class="portfolio-info">
-                                    <h4>操作练习</h4>
-                                    <p>使用雾机进行练习时的操作</p>
-
-                                </div>
-                            </div>
-                        </div><!-- End Portfolio Item -->
-
-                    </div><!-- End Portfolio Container -->
+                <div class="section-header">
+                    <h2>活动实拍</h2>
+                    <p>来自一些奇妙的拍摄者，记录我们工作的精彩瞬间</p>
                 </div>
 
-            </div>
+                <!-- 筛选按钮 -->
+                <div class="gallery-filter">
+                    <button class="filter-btn active" data-filter="*">全部活动</button>
+                    <button class="filter-btn" data-filter=".filter-event">活动现场</button>
+                    <button class="filter-btn" data-filter=".filter-operation">设备操作</button>
+                    <button class="filter-btn" data-filter=".filter-team">团队合照</button>
+                </div>
 
-        </div>
-
-
-        <div class="container">
-            <div id="名人堂" class="mt-2 mb-2">
-                <br>
-                <hr>
-                <br>
-                <br>
-            </div>
-            <div class="row justify-content-around gy-4">
-                <!-- Section Title -->
-                <div class="container section-title">
-                    <h2>骨干成员</h2>
-                    <p>网络部的名人堂</p>
-                </div><!-- End Section Title -->
-                <div class="container col-11">
-                    <br>
-                    <!-- 轮播 -->
-                    <div id="名人堂列表" class="carousel slide" data-bs-ride="carousel">
-                        <!-- 轮播图片 -->
-                        <div class="carousel-inner" data-tag="hall-of-fame-carousel">
-                            <pre
-                                data-tag="hall-of-fame-info">{"name":"陈俊逸(乌鸡)","avatar":"assets/avatar/67061aeceaf63.jpg","star":5,"description":"2026届 部长"}</pre>
-                            <pre
-                                data-tag="hall-of-fame-info">{"name":"林子皓(要乐奈)","avatar":"assets/avatar/67061aec52429.jpg","star":5,"description":"2026届 副部长"}</pre>
-                            <pre
-                                data-tag="hall-of-fame-info">{"name":"林尤源(鱿鱼)","avatar":"assets/avatar/67061aec39e4d.jpg","star":5,"description":"2026届 副部长"}</pre>
-                            <pre
-                                data-tag="hall-of-fame-info">{"name":"刘勇泽(水星)","avatar":"assets/avatar/07785846-7733-4b5c-9657-6d29f530784f.jpg","star":6,"description":"2025届 传奇部长"}</pre>
-                            <pre
-                                data-tag="hall-of-fame-info">{"name":"冯天亮","avatar":"assets/avatar/6708b83fdd463.jpg","star":6,"description":"传奇部长冯天亮在此"}</pre>
-                            <pre
-                                data-tag="hall-of-fame-info">{"name":"林义杰","avatar":"assets/avatar/6708b83f38d0c.jpg","star":6,"description":"传奇部长林义杰在此！"}</pre>
-                            <div class="carousel-item active">
-                                <!-- 使用 row 类创建行布局 -->
-                                <div class="row align-items-center">
-                                    <!-- 头像部分，占 3 列 -->
-                                    <div class="col-3 text-center">
-                                        <img resourcesrc="assets/avatar/67061aeceaf63.jpg" class="testimonial-img"
-                                            alt="">
-                                    </div>
-                                    <!-- 描述部分，占 9 列 -->
-                                    <div class="col-9">
-                                        <h3><strong>陈俊逸(乌鸡)</strong></h3>
-                                        <star data-star-amount="5"></star>
-                                        <p>
-                                            <i class="bi bi-quote quote-icon-left"></i>
-                                            <span>2026届 部长</span>
-                                            <i class="bi bi-quote quote-icon-right"></i>
-                                        </p>
-                                    </div>
+                <!-- 瀑布流布局 -->
+                <div class="waterfall-grid">
+                    <!-- 项目1: 合照 -->
+                    <div class="waterfall-item filter-team">
+                        <div class="gallery-card">
+                            <div class="position-relative overflow-hidden">
+                                <img preview-image-src="assets/images/preview_6706146ba031d.jpg"
+                                    resourcesrc="assets/images/6706146ba031d.jpg" class="gallery-img" alt="网络部合照">
+                                <div class="position-absolute top-0 end-0 m-3">
+                                    <span class="badge-category">团队合照</span>
                                 </div>
                             </div>
-                            <div class="carousel-item active">
-                                <!-- 使用 row 类创建行布局 -->
-                                <div class="row align-items-center">
-                                    <!-- 头像部分，占 3 列 -->
-                                    <div class="col-3 text-center">
-                                        <img resourcesrc="" class="testimonial-img" alt="">
-                                    </div>
-                                    <!-- 描述部分，占 9 列 -->
-                                    <div class="col-9">
-                                        <h3><strong>(乌鸡)</strong></h3>
-                                        <star data-star-amount="50"></star>
-                                        <p>
-                                            <i class="bi bi-quote quote-icon-left"></i>
-                                            <span>部长</span>
-                                            <i class="bi bi-quote quote-icon-right"></i>
-                                        </p>
-                                    </div>
-                                </div>
+                            <div class="card-info">
+                                <h4>团队合照</h4>
+                                <p>24届喊楼时网络部23，24，25届的珍贵合照</p>
+                                <button class="view-btn" data-bs-toggle="modal" data-bs-target="#imageModal"
+                                    data-title="团队合照" data-description="24届喊楼时网络部23，24，25届的合照"
+                                    data-preview="assets/images/preview_6706146ba031d.jpg"
+                                    data-full="assets/images/6706146ba031d.jpg">
+                                    <i class="bi bi-zoom-in"></i> 查看大图
+                                </button>
                             </div>
                         </div>
-                        <!-- 左右切换按钮 -->
-                        <button class="carousel-control-prev" type="button" data-bs-target="#名人堂列表" data-bs-slide="prev"
-                            style="width: 5%; left: -30px; /* 向左偏移 30px */ transform: translateY(-50%); top: 50%;">
-                            <!-- 调整按钮宽度和位置 -->
-                            <!-- 修改上一个按钮图标的背景颜色为黑色 -->
-                            <span class="carousel-control-prev-icon" aria-hidden="true"
-                                style="background-color: #000;"></span>
-                            <span class="visually-hidden">Previous</span>
+                    </div>
+
+                    <!-- 项目2: 活动现场 -->
+                    <div class="waterfall-item filter-event">
+                        <div class="gallery-card">
+                            <div class="position-relative overflow-hidden">
+                                <img preview-image-src="assets/images/preview_67061383c525d.jpg"
+                                    resourcesrc="assets/images/67061383c525d.jpg" class="gallery-img" alt="校庆中控台">
+                                <div class="position-absolute top-0 end-0 m-3">
+                                    <span class="badge-category">活动现场</span>
+                                </div>
+                            </div>
+                            <div class="card-info">
+                                <h4>校庆活动</h4>
+                                <p>校庆时的中控台操作现场，保障活动顺利进行</p>
+                                <button class="view-btn" data-bs-toggle="modal" data-bs-target="#imageModal"
+                                    data-title="校庆活动" data-description="校庆时的中控台"
+                                    data-preview="assets/images/preview_67061383c525d.jpg"
+                                    data-full="assets/images/67061383c525d.jpg">
+                                    <i class="bi bi-zoom-in"></i> 查看大图
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 项目3: 活动现场 -->
+                    <div class="waterfall-item filter-operation">
+                        <div class="gallery-card">
+                            <div class="position-relative overflow-hidden">
+                                <img preview-image-src="assets/images/preview_670613960ec62.jpg"
+                                    resourcesrc="assets/images/670613960ec62.jpg" class="gallery-img" alt="导播与灯控">
+                                <div class="position-absolute top-0 end-0 m-3">
+                                    <span class="badge-category">设备操作</span>
+                                </div>
+                            </div>
+                            <div class="card-info">
+                                <h4>校园十大歌手</h4>
+                                <p>活动现场的导播与灯控协作，创造完美舞台效果</p>
+                                <button class="view-btn" data-bs-toggle="modal" data-bs-target="#imageModal"
+                                    data-title="校园十大歌手" data-description="校园十大歌手导播与灯控"
+                                    data-preview="assets/images/preview_670613960ec62.jpg"
+                                    data-full="assets/images/670613960ec62.jpg">
+                                    <i class="bi bi-zoom-in"></i> 查看大图
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 项目4: 活动现场 -->
+                    <div class="waterfall-item filter-operation">
+                        <div class="gallery-card">
+                            <div class="position-relative overflow-hidden">
+                                <img preview-image-src="assets/images/preview_670613950c57a.jpg"
+                                    resourcesrc="assets/images/670613950c57a.jpg" class="gallery-img" alt="灯控台">
+                                <div class="position-absolute top-0 end-0 m-3">
+                                    <span class="badge-category">设备操作</span>
+                                </div>
+                            </div>
+                            <div class="card-info">
+                                <h4>校运会社团日</h4>
+                                <p>校运会社团日的灯控台操作，为活动增添光彩</p>
+                                <button class="view-btn" data-bs-toggle="modal" data-bs-target="#imageModal"
+                                    data-title="校运会社团日" data-description="校运会社团日的灯控台"
+                                    data-preview="assets/images/preview_670613950c57a.jpg"
+                                    data-full="assets/images/670613950c57a.jpg">
+                                    <i class="bi bi-zoom-in"></i> 查看大图
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 项目5: 活动现场 -->
+                    <div class="waterfall-item filter-event">
+                        <div class="gallery-card">
+                            <div class="position-relative overflow-hidden">
+                                <img preview-image-src="assets/images/preview_67061396b32d7.jpg"
+                                    resourcesrc="assets/images/67061396b32d7.jpg" class="gallery-img" alt="自带设备">
+                                <div class="position-absolute top-0 end-0 m-3">
+                                    <span class="badge-category">活动现场</span>
+                                </div>
+                            </div>
+                            <div class="card-info">
+                                <h4>接待外来活动</h4>
+                                <p>接待外来活动时使用自带设备提供技术支持</p>
+                                <button class="view-btn" data-bs-toggle="modal" data-bs-target="#imageModal"
+                                    data-title="接待外来活动" data-description="接待外来活动的自带设备"
+                                    data-preview="assets/images/preview_67061396b32d7.jpg"
+                                    data-full="assets/images/67061396b32d7.jpg">
+                                    <i class="bi bi-zoom-in"></i> 查看大图
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 项目6: 操作练习 -->
+                    <div class="waterfall-item filter-operation">
+                        <div class="gallery-card">
+                            <div class="position-relative overflow-hidden">
+                                <img preview-image-src="assets/images/preview_67061381b0bc2.jpg"
+                                    resourcesrc="assets/images/67061381b0bc2.jpg" class="gallery-img" alt="雾机操作">
+                                <div class="position-absolute top-0 end-0 m-3">
+                                    <span class="badge-category">设备操作</span>
+                                </div>
+                            </div>
+                            <div class="card-info">
+                                <h4>设备操作练习</h4>
+                                <p>使用雾机进行练习时的操作场景，提升团队技能</p>
+                                <button class="view-btn" data-bs-toggle="modal" data-bs-target="#imageModal"
+                                    data-title="设备操作练习" data-description="使用雾机进行练习时的操作"
+                                    data-preview="assets/images/preview_67061381b0bc2.jpg"
+                                    data-full="assets/images/67061381b0bc2.jpg">
+                                    <i class="bi bi-zoom-in"></i> 查看大图
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 大图预览模态框 -->
+        <div class="modal fade image-modal" id="imageModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-fullscreen">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <button class="close-btn" data-bs-dismiss="modal" aria-label="Close">
+                            <i class="bi bi-x-lg"></i>
                         </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#名人堂列表" data-bs-slide="next"
-                            style="width: 5%; right: -30px; /* 向右偏移 30px */ transform: translateY(-50%); top: 50%;">
-                            <!-- 调整按钮宽度和位置 -->
-                            <!-- 修改下一个按钮图标的背景颜色为黑色 -->
-                            <span class="carousel-control-next-icon" aria-hidden="true"
-                                style="background-color: #000;"></span>
-                            <span class="visually-hidden">Next</span>
+
+                        <button class="nav-btn prev-btn">
+                            <i class="bi bi-chevron-left"></i>
                         </button>
+
+                        <button class="nav-btn next-btn">
+                            <i class="bi bi-chevron-right"></i>
+                        </button>
+
+                        <div class="img-loading" id="imgLoading">
+                            <div class="spinner-border" role="status">
+                                <span class="visually-hidden">加载中...</span>
+                            </div>
+                        </div>
+
+                        <img id="modalImage" class="modal-img" alt="大图预览">
+
+                        <div class="image-details">
+                            <h4 id="modalImageTitle">图片标题</h4>
+                            <p id="modalImageDescription">图片描述</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <br>
+
+
+        <!-- 名人堂板块 -->
+        <section id="名人堂" class="py-5 bg-light">
+            <div class="container">
+                <!-- 标题区域 -->
+                <div class="row justify-content-center mb-5">
+                    <div class="col-lg-8 text-center">
+                        <h2 class="display-5 fw-bold mb-3">骨干成员</h2>
+                        <p class="lead text-muted">网络部的名人堂</p>
+                        <div class="border-top border-warning border-2 w-25 mx-auto my-4"></div>
+                    </div>
+                </div>
+
+                <!-- 成员轮播 -->
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div id="hall-of-fame-carousel" class="carousel slide" data-bs-ride="carousel">
+                            <!-- 轮播指示器 -->
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#hall-of-fame-carousel" data-bs-slide-to="0"
+                                    class="active" aria-current="true"></button>
+                                <button type="button" data-bs-target="#hall-of-fame-carousel"
+                                    data-bs-slide-to="1"></button>
+                                <button type="button" data-bs-target="#hall-of-fame-carousel"
+                                    data-bs-slide-to="2"></button>
+                                <button type="button" data-bs-target="#hall-of-fame-carousel"
+                                    data-bs-slide-to="3"></button>
+                                <button type="button" data-bs-target="#hall-of-fame-carousel"
+                                    data-bs-slide-to="4"></button>
+                                <button type="button" data-bs-target="#hall-of-fame-carousel"
+                                    data-bs-slide-to="5"></button>
+                            </div>
+
+                            <!-- 轮播内容 -->
+                            <div class="carousel-inner bg-white rounded-4 shadow-sm p-4">
+                                <!-- 成员1 - 陈俊逸 -->
+                                <div class="carousel-item active">
+                                    <div class="row align-items-center">
+                                        <div class="col-md-3 text-center">
+                                            <img data-src="assets/avatar/67061aeceaf63.jpg"
+                                                class="lazyload testimonial-img rounded-circle img-thumbnail border-warning border-3"
+                                                width="150" height="150" alt="陈俊逸(乌鸡)">
+                                        </div>
+                                        <div class="col-md-9">
+                                            <h3 class="fw-bold">陈俊逸(乌鸡)</h3>
+                                            <div class="mb-2">
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                            </div>
+                                            <blockquote class="blockquote">
+                                                <p class="mb-0">2026届 部长</p>
+                                            </blockquote>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 成员2 - 林子皓 -->
+                                <div class="carousel-item">
+                                    <div class="row align-items-center">
+                                        <div class="col-md-3 text-center">
+                                            <img data-src="assets/avatar/67061aec52429.jpg"
+                                                class="lazyload testimonial-img rounded-circle img-thumbnail border-warning border-3"
+                                                width="150" height="150" alt="林子皓(要乐奈)">
+                                        </div>
+                                        <div class="col-md-9">
+                                            <h3 class="fw-bold">林子皓(要乐奈)</h3>
+                                            <div class="mb-2">
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                            </div>
+                                            <blockquote class="blockquote">
+                                                <p class="mb-0">2026届 副部长</p>
+                                            </blockquote>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 成员3 - 林尤源 -->
+                                <div class="carousel-item">
+                                    <div class="row align-items-center">
+                                        <div class="col-md-3 text-center">
+                                            <img data-src="assets/avatar/67061aec39e4d.jpg"
+                                                class="lazyload testimonial-img rounded-circle img-thumbnail border-warning border-3"
+                                                width="150" height="150" alt="林尤源(鱿鱼)">
+                                        </div>
+                                        <div class="col-md-9">
+                                            <h3 class="fw-bold">林尤源(鱿鱼)</h3>
+                                            <div class="mb-2">
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                            </div>
+                                            <blockquote class="blockquote">
+                                                <p class="mb-0">2026届 副部长</p>
+                                            </blockquote>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 成员4 - 刘勇泽 -->
+                                <div class="carousel-item">
+                                    <div class="row align-items-center">
+                                        <div class="col-md-3 text-center">
+                                            <img data-src="assets/avatar/07785846-7733-4b5c-9657-6d29f530784f.jpg"
+                                                class="lazyload testimonial-img rounded-circle img-thumbnail border-warning border-3"
+                                                width="150" height="150" alt="刘勇泽(水星)">
+                                        </div>
+                                        <div class="col-md-9">
+                                            <h3 class="fw-bold">刘勇泽(水星)</h3>
+                                            <div class="mb-2">
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                            </div>
+                                            <blockquote class="blockquote">
+                                                <p class="mb-0">2025届 传奇部长</p>
+                                            </blockquote>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 成员5 - 冯天亮 -->
+                                <div class="carousel-item">
+                                    <div class="row align-items-center">
+                                        <div class="col-md-3 text-center">
+                                            <img data-src="assets/avatar/6708b83fdd463.jpg"
+                                                class="lazyload testimonial-img rounded-circle img-thumbnail border-warning border-3"
+                                                width="150" height="150" alt="冯天亮">
+                                        </div>
+                                        <div class="col-md-9">
+                                            <h3 class="fw-bold">冯天亮</h3>
+                                            <div class="mb-2">
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                            </div>
+                                            <blockquote class="blockquote">
+                                                <p class="mb-0">传奇部长冯天亮在此</p>
+                                            </blockquote>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 成员6 - 林义杰 -->
+                                <div class="carousel-item">
+                                    <div class="row align-items-center">
+                                        <div class="col-md-3 text-center">
+                                            <img data-src="assets/avatar/6708b83f38d0c.jpg"
+                                                class="lazyload testimonial-img rounded-circle img-thumbnail border-warning border-3"
+                                                width="150" height="150" alt="林义杰">
+                                        </div>
+                                        <div class="col-md-9">
+                                            <h3 class="fw-bold">林义杰</h3>
+                                            <div class="mb-2">
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                            </div>
+                                            <blockquote class="blockquote">
+                                                <p class="mb-0">传奇部长林义杰在此！</p>
+                                            </blockquote>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 轮播控制按钮 -->
+                            <button class="carousel-control-prev" type="button" data-bs-target="#hall-of-fame-carousel"
+                                data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon bg-dark rounded-circle p-3"
+                                    aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#hall-of-fame-carousel"
+                                data-bs-slide="next">
+                                <span class="carousel-control-next-icon bg-dark rounded-circle p-3"
+                                    aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 延迟加载图片的JavaScript -->
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                // 延迟加载图片
+                function lazyLoadImages() {
+                    const lazyImages = document.querySelectorAll("img.lazyload");
+
+                    lazyImages.forEach(img => {
+                        // 替换data-src为src
+                        if (img.getAttribute("data-src")) {
+                            img.setAttribute("src", img.getAttribute("data-src"));
+                            img.removeAttribute("data-src");
+                        }
+                    });
+                }
+
+                // 页面加载后延迟500ms加载图片
+                setTimeout(lazyLoadImages, 500);
+
+                // 或者使用Intersection Observer实现懒加载
+                if ('IntersectionObserver' in window) {
+                    const lazyImageObserver = new IntersectionObserver(function (entries, observer) {
+                        entries.forEach(function (entry) {
+                            if (entry.isIntersecting) {
+                                const lazyImage = entry.target;
+                                if (lazyImage.getAttribute("data-src")) {
+                                    lazyImage.setAttribute("src", lazyImage.getAttribute("data-src"));
+                                    lazyImage.removeAttribute("data-src");
+                                    lazyImageObserver.unobserve(lazyImage);
+                                }
+                            }
+                        });
+                    });
+
+                    document.querySelectorAll("img.lazyload").forEach(function (lazyImage) {
+                        lazyImageObserver.observe(lazyImage);
+                    });
+                }
+            });
+        </script>
         <hr>
         <br>
         <br>
-        <footer id="footer" class="footer dark-background">
-            <div class="container footer-top">
-                <div class="row gy-4">
-                    <div class="col-lg-4 col-md-6 footer-about">
-                        <h5>
-                            <strong>
-                                海口市第四中学团委学生会<br>网络管理部
-                            </strong>
-                        </h5>
-                        <div class="footer-contact pt-3">
-                            <p>期待您的加入</p>
-                            <p class="mt-3">
-                                <strong>QQ群:</strong>
-                                <span onclick="window.open('https://qm.qq.com/q/5gVlLLYjtC')">
-                                    点击跳转外部链接
-                                </span>
-                            </p>
-                        </div>
+
+    </main>
+    <footer id="footer" class="footer dark-background">
+        <div class="container footer-top">
+            <div class="row gy-4">
+                <div class="col-lg-4 col-md-6 footer-about">
+                    <h5>
+                        <strong>
+                            海口市第四中学团委学生会<br>网络管理部
+                        </strong>
+                    </h5>
+                    <div class="footer-contact pt-3">
+                        <p>期待您的加入</p>
+                        <p class="mt-3">
+                            <strong>QQ群:</strong>
+                            <span onclick="window.open('https://qm.qq.com/q/5gVlLLYjtC')">
+                                点击跳转外部链接
+                            </span>
+                        </p>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <div class="container copyright text-center mt-4">
-                <div id="关于">
-                    <span>Copyright</span>&nbsp;
-                    <strong class="px-1 sitename">海口市第四中学网络部</strong>
-                    <span>&nbsp;All Rights Reserved</span>
-                </div>
+        <div class="container copyright text-center mt-4">
+            <div id="关于">
+                <span>Copyright</span>&nbsp;
+                <strong class="px-1 sitename">海口市第四中学网络部</strong>
+                <span>&nbsp;All Rights Reserved</span>
+            </div>
 
-                <div>
-                    <span class="nav-link-text" onclick="window.open('https://github.com/anndfine/hnhkszwlbsite')">
-                        <i class="bi bi-github">&nbsp;</i>
-                        在Github上编辑此页
-                    </span>
-                </div>
+            <div>
+                <span class="nav-link-text" onclick="window.open('https://github.com/anndfine/hnhkszwlbsite')">
+                    <i class="bi bi-github">&nbsp;</i>
+                    在Github上编辑此页
+                </span>
             </div>
-            <div class="container" style="opacity: 0.70;">
-                <div class="text-muted small mt-3">
-                    <sup>*</sup> 仅统计最近三届，数据统计截止至2025年8月
-                </div>
+        </div>
+        <div class="container" style="opacity: 0.70;">
+            <div class="text-muted small mt-3">
+                <sup>*</sup> 仅统计最近三届，数据统计截止至2025年8月
             </div>
-        </footer>
-    </div>
+        </div>
+    </footer>
     <!-- module -->
     <script src="/assets/js/app.js" type="module"></script>
+    <link rel="stylesheet"
+        href="https://cdn-cf.anndfine.top/resources/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 </body>
 
 </html>
