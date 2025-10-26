@@ -7,6 +7,8 @@
       <WorkSection />
       <ServiceSection />
       <BenefitsSection />
+      <PositionsSection />
+      <GallerySection />
       <MembersSection />
     </main>
     <Footer />
@@ -20,6 +22,8 @@ import HeroSection from '@/components/Sections/HeroSection.vue'
 import WorkSection from '@/components/Sections/WorkSection.vue'
 import ServiceSection from '@/components/Sections/ServiceSection.vue'
 import BenefitsSection from '@/components/Sections/BenefitsSection.vue'
+import PositionsSection from '@/components/Sections/PositionsSection.vue'
+import GallerySection from '@/components/Sections/GallerySection.vue'
 import MembersSection from '@/components/Sections/MembersSection.vue'
 </script>
 
