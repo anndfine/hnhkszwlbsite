@@ -99,6 +99,12 @@ export const initImageLoader = () => {
       console.log('设置图片src和alt完成')
       
       element.onload = () => {
+        // 尝试移除.lazyload类名
+        try{
+          element.classList.remove('lazyload')
+        } catch (e) {
+          console.error('移除.lazyload类名时出错:', e)
+        }
         console.log('图片加载完成，释放对象URL:', objectUrl)
         URL.revokeObjectURL(objectUrl)
       }
