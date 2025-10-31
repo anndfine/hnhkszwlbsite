@@ -26,19 +26,15 @@
     <!-- 工作内容卡片 -->
     <div class="container">
       <div class="row g-4">
-        <div 
-          v-for="(work, index) in workData" 
-          :key="index"
-          class="col-lg-6"
-        >
+        <div v-for="(work, index) in workData" :key="index" class="col-lg-6">
           <div class="card h-100 border-0 shadow-sm overflow-hidden">
             <div class="row g-0 h-100">
               <div class="col-md-5">
-                <img 
-                  :data-src="work.image" 
+                <img
+                  :data-src="work.image"
                   class="lazyload img-fluid h-100 object-fit-cover"
                   :alt="work.alt"
-                >
+                />
               </div>
               <div class="col-md-7 d-flex align-items-center">
                 <div class="card-body p-4">
@@ -48,8 +44,8 @@
                   </div>
                   <p class="card-text text-muted">{{ work.description }}</p>
                   <ul class="list-unstyled mt-3">
-                    <li 
-                      v-for="(feature, featureIndex) in work.features" 
+                    <li
+                      v-for="(feature, featureIndex) in work.features"
                       :key="featureIndex"
                       class="mb-2"
                     >

@@ -2,11 +2,7 @@
 <template>
   <div class="gallery-card">
     <div class="position-relative overflow-hidden">
-      <img 
-        :data-src="item.preview" 
-        class="lazyload gallery-img"
-        :alt="item.alt"
-      >
+      <img :data-src="item.preview" class="lazyload gallery-img" :alt="item.alt" />
       <div class="position-absolute top-0 end-0 m-3">
         <span class="badge-category">{{ getCategoryName(item.category) }}</span>
       </div>
@@ -14,12 +10,7 @@
     <div class="card-info">
       <h4>{{ item.title }}</h4>
       <p>{{ item.description }}</p>
-      <button 
-        class="view-btn" 
-        @click="openModal"
-      >
-        <i class="bi bi-zoom-in"></i> 查看大图
-      </button>
+      <button class="view-btn" @click="openModal"><i class="bi bi-zoom-in"></i> 查看大图</button>
     </div>
   </div>
 </template>
@@ -36,8 +27,8 @@ defineProps<Props>()
 const getCategoryName = (category: string) => {
   const categoryMap: Record<string, string> = {
     team: '团队合照',
-    event: '活动现场', 
-    operation: '设备操作'
+    event: '活动现场',
+    operation: '设备操作',
   }
   return categoryMap[category] || '其他'
 }
@@ -54,7 +45,9 @@ const openModal = () => {
   border-radius: 0.5rem;
   overflow: hidden;
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
 }
 
 .gallery-card:hover {

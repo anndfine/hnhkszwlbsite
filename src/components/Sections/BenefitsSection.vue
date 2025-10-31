@@ -6,11 +6,11 @@
         <!-- 福利图片 -->
         <div class="col-lg-6">
           <div class="rounded-4 overflow-hidden shadow-sm">
-            <img 
+            <img
               :data-src="benefitImage"
               class="lazyload img-fluid w-100 h-auto object-fit-cover"
-              alt="网络部成员活动照片" 
-            >
+              alt="网络部成员活动照片"
+            />
           </div>
         </div>
 
@@ -21,8 +21,8 @@
             <p class="lead text-muted mb-4">网络部成员专属的福利与支持</p>
 
             <div class="benefits-list">
-              <div 
-                v-for="(benefit, index) in benefitsData" 
+              <div
+                v-for="(benefit, index) in benefitsData"
                 :key="index"
                 class="benefit-item mb-4 p-4 bg-white rounded-4 shadow-sm"
               >

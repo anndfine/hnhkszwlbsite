@@ -2,12 +2,7 @@
 <template>
   <div class="card border-0 shadow-sm h-100" :class="customClass">
     <div v-if="image" class="card-img-top">
-      <img 
-        :src="image" 
-        :alt="title" 
-        class="img-fluid"
-        :class="imageClass"
-      >
+      <img :src="image" :alt="title" class="img-fluid" :class="imageClass" />
     </div>
     <div class="card-body" :class="bodyClass">
       <slot name="header">
@@ -17,11 +12,11 @@
         </div>
         <h5 v-else-if="title" class="card-title fw-bold">{{ title }}</h5>
       </slot>
-      
+
       <p v-if="description" class="card-text text-muted">{{ description }}</p>
-      
+
       <slot></slot>
-      
+
       <slot name="footer"></slot>
     </div>
   </div>

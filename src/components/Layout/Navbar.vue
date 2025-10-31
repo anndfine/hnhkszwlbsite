@@ -1,17 +1,17 @@
 <!-- src/components/Layout/Navbar.vue -->
 <template>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" style="opacity: 0.70;">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" style="opacity: 0.7">
     <div class="container-fluid">
       <a class="navbar-brand nav-link nav-link-text d-block" href="/">
         <strong>海口市第四中学网络部</strong>
         <div class="small">wlb.yt437700.top</div>
       </a>
-      <button 
-        class="navbar-toggler" 
-        type="button" 
+      <button
+        class="navbar-toggler"
+        type="button"
         data-bs-toggle="collapse"
-        data-bs-target="#navbarSupportedContent" 
-        aria-controls="navbarSupportedContent" 
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
         aria-expanded="false"
         aria-label="Toggle navigation"
       >

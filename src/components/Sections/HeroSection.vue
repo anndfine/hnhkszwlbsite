@@ -1,22 +1,22 @@
 <!-- src/components/Sections/HeroSection.vue -->
 <template>
   <section class="_bg-white rounded min-vh-100">
-    <div class="position-relative" style="height: 100vh;">
+    <div class="position-relative" style="height: 100vh">
       <!-- 轮播图 -->
       <div class="carousel slide h-100" data-bs-ride="carousel" id="fullscreenCarousel">
         <div class="carousel-inner h-100">
-          <div 
-            v-for="(slide, index) in slides" 
+          <div
+            v-for="(slide, index) in slides"
             :key="index"
             class="carousel-item h-100"
             :class="{ active: slide.active }"
           >
-            <img 
-              :data-src="slide.image" 
+            <img
+              :data-src="slide.image"
               class="lazyload d-block w-100 h-100"
-              style="object-fit: cover;" 
+              style="object-fit: cover"
               :alt="slide.alt"
-            >
+            />
           </div>
         </div>
       </div>
@@ -25,17 +25,23 @@
       <div class="carousel-overlay position-absolute top-0 start-0 w-100 h-100"></div>
 
       <!-- 主体内容 , 覆盖在轮播图上的内容 -->
-      <div class="position-absolute top-50 start-50 translate-middle text-center text-white w-100 px-3 z-2">
+      <div
+        class="position-absolute top-50 start-50 translate-middle text-center text-white w-100 px-3 z-2"
+      >
         <strong class="display-2">欢迎来到网络部</strong>
         <center>
-          <hr class="col-1 text-warning strong" style="border-top-width: 4px;opacity: 0.8;">
+          <hr class="col-1 text-warning strong" style="border-top-width: 4px; opacity: 0.8" />
         </center>
-        <p class="mt-4" style="opacity: .75;">
-          网络部全名 “ 海口市第四中学团委学生会网络管理部 ”，隶属于 海口市第四中学团委学生会。 
+        <p class="mt-4" style="opacity: 0.75">
+          网络部全名 “ 海口市第四中学团委学生会网络管理部 ”，隶属于 海口市第四中学团委学生会。
         </p>
         <noscript>该网页必须启用JavaScript才能正常运行！</noscript>
-        <a id="加入我们" href="#members" class="btn btn-outline-warning text-white"
-          style="border-width: 0.2rem;border-radius: 25px;">
+        <a
+          id="加入我们"
+          href="#members"
+          class="btn btn-outline-warning text-white"
+          style="border-width: 0.2rem; border-radius: 25px"
+        >
           <div class="p-2 ms-2 me-2">加入我们</div>
         </a>
       </div>
@@ -69,7 +75,7 @@ const slides = heroSlides
   .display-2 {
     font-size: 2rem !important;
   }
-  
+
   .position-relative {
     height: 70vh !important;
   }
@@ -79,11 +85,11 @@ const slides = heroSlides
   .display-2 {
     font-size: 1.5rem !important;
   }
-  
+
   .position-relative {
     height: 60vh !important;
   }
-  
+
   .btn {
     border-width: 0.1rem !important;
     border-radius: 20px !important;

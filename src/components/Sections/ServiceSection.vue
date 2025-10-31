@@ -5,31 +5,31 @@
       <!-- 标题区域 -->
       <div class="text-center mb-5">
         <h2 class="display-5 fw-bold position-relative d-inline-block mb-3">
-          <span class="position-absolute top-50 start-0 translate-middle-y w-25 border-top border-2 border-warning opacity-75"></span>
+          <span
+            class="position-absolute top-50 start-0 translate-middle-y w-25 border-top border-2 border-warning opacity-75"
+          ></span>
           <span class="px-3">服务范围</span>
-          <span class="position-absolute top-50 end-0 translate-middle-y w-25 border-top border-2 border-warning opacity-75"></span>
+          <span
+            class="position-absolute top-50 end-0 translate-middle-y w-25 border-top border-2 border-warning opacity-75"
+          ></span>
         </h2>
         <p class="lead text-muted">承办班级、年级、乃至校级和外来的活动</p>
       </div>
 
       <!-- 服务范围卡片 -->
       <div class="row g-4">
-        <div 
-          v-for="(service, index) in servicesData" 
-          :key="index"
-          class="col-lg-4 col-md-6"
-        >
+        <div v-for="(service, index) in servicesData" :key="index" class="col-lg-4 col-md-6">
           <div class="card h-100 border-0 shadow-sm">
             <div class="card-body p-4">
               <div class="d-flex align-items-center mb-3">
                 <i :class="service.icon" class="fs-4 text-primary me-3"></i>
                 <h4 class="mb-0 fw-bold">{{ service.title }}</h4>
               </div>
-              <hr class="my-3 border-warning opacity-75" style="border-top-width: 3px;">
+              <hr class="my-3 border-warning opacity-75" style="border-top-width: 3px" />
               <p class="card-text">{{ service.description }}</p>
               <div class="mt-3">
-                <span 
-                  v-for="(badge, badgeIndex) in service.badges" 
+                <span
+                  v-for="(badge, badgeIndex) in service.badges"
                   :key="badgeIndex"
                   class="badge bg-light text-dark border me-2"
                 >

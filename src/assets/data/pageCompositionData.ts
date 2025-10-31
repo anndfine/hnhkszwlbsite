@@ -7,28 +7,28 @@ export interface CompositionItem {
 
 export const pageCompositionData: CompositionItem[] = [
   {
-    name: "Vue",
+    name: 'Vue',
     percentage: 35.4,
-    colorClass: "bg-primary"
+    colorClass: 'bg-primary',
   },
   {
-    name: "TypeScript",
+    name: 'TypeScript',
     percentage: 33.5,
-    colorClass: "bg-success"
+    colorClass: 'bg-success',
   },
   {
-    name: "CSS",
+    name: 'CSS',
     percentage: 12.7,
-    colorClass: "bg-info"
+    colorClass: 'bg-info',
   },
   {
-    name: "JavaScript",
+    name: 'JavaScript',
     percentage: 10.3,
-    colorClass: "bg-warning"
+    colorClass: 'bg-warning',
   },
   {
-    name: "HTML",
+    name: 'HTML',
     percentage: 8.1,
-    colorClass: "bg-danger"
-  }
+    colorClass: 'bg-danger',
+  },
 ]

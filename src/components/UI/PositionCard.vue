@@ -20,8 +20,8 @@
       </div>
 
       <div class="mb-4">
-        <div 
-          v-for="(requirement, index) in position.requirements" 
+        <div
+          v-for="(requirement, index) in position.requirements"
           :key="index"
           class="requirement-item d-flex align-items-start"
         >
@@ -33,11 +33,7 @@
       </div>
 
       <div class="d-flex flex-wrap gap-2 mb-4">
-        <span 
-          v-for="(skill, index) in position.skills" 
-          :key="index"
-          class="badge skill-badge"
-        >
+        <span v-for="(skill, index) in position.skills" :key="index" class="badge skill-badge">
           {{ skill }}
         </span>
       </div>

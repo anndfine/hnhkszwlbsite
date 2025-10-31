@@ -27,7 +27,7 @@ export const initGallery = () => {
     const activeFilter = activeFilterBtn?.getAttribute('data-filter') || '*'
 
     // 根据筛选条件获取当前可见的图片项
-    currentItems = galleryItems.filter(item => {
+    currentItems = galleryItems.filter((item) => {
       if (activeFilter === '*') return true
       return item.classList.contains(activeFilter.slice(1))
     })
@@ -105,9 +105,9 @@ export const initGallery = () => {
     if (!imageModal || !imageModal.classList.contains('show')) return
 
     if (e.key === 'ArrowLeft') {
-      ; (prevBtn as HTMLElement)?.click()
+      ;(prevBtn as HTMLElement)?.click()
     } else if (e.key === 'ArrowRight') {
-      ; (nextBtn as HTMLElement)?.click()
+      ;(nextBtn as HTMLElement)?.click()
     } else if (e.key === 'Escape') {
       const modalInstance = (window as any).bootstrap?.Modal?.getInstance(imageModal)
       modalInstance?.hide()
@@ -118,18 +118,18 @@ export const initGallery = () => {
   const filterBtns = document.querySelectorAll('.filter-btn')
   const galleryItemsAll = document.querySelectorAll('.waterfall-item')
 
-  filterBtns.forEach(btn => {
+  filterBtns.forEach((btn) => {
     btn.addEventListener('click', function (this: HTMLElement) {
-      filterBtns.forEach(b => b.classList.remove('active'))
+      filterBtns.forEach((b) => b.classList.remove('active'))
       this.classList.add('active')
 
       const filterValue = this.getAttribute('data-filter') || '*'
 
-      galleryItemsAll.forEach(item => {
+      galleryItemsAll.forEach((item) => {
         if (filterValue === '*' || item.classList.contains(filterValue.slice(1))) {
-          (item as HTMLElement).style.display = 'block'
+          ;(item as HTMLElement).style.display = 'block'
         } else {
-          (item as HTMLElement).style.display = 'none'
+          ;(item as HTMLElement).style.display = 'none'
         }
       })
     })

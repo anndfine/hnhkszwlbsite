@@ -7,23 +7,23 @@ export interface BenefitItem {
 
 export const benefitsData: BenefitItem[] = [
   {
-    title: "活动室使用权",
-    description: "可使用学校小礼堂作为活动空间，为部门活动提供便利场所。",
-    icon: "bi-house-door-fill"
+    title: '活动室使用权',
+    description: '可使用学校小礼堂作为活动空间，为部门活动提供便利场所。',
+    icon: 'bi-house-door-fill',
   },
   {
-    title: "技术培训",
-    description: "为新成员提供设备操作和技术培训，帮助快速掌握所需技能。",
-    icon: "bi-laptop-fill"
+    title: '技术培训',
+    description: '为新成员提供设备操作和技术培训，帮助快速掌握所需技能。',
+    icon: 'bi-laptop-fill',
   },
   {
-    title: "活动参与机会",
-    description: "参与学校各类大型活动的技术支持工作，获得实践经验。",
-    icon: "bi-ticket-perforated-fill"
+    title: '活动参与机会',
+    description: '参与学校各类大型活动的技术支持工作，获得实践经验。',
+    icon: 'bi-ticket-perforated-fill',
   },
   {
-    title: "团队交流活动",
-    description: "参与部门组织的各类交流活动，结识志同道合的伙伴。",
-    icon: "bi-people-fill"
-  }
+    title: '团队交流活动',
+    description: '参与部门组织的各类交流活动，结识志同道合的伙伴。',
+    icon: 'bi-people-fill',
+  },
 ]

@@ -9,29 +9,29 @@
 
       <!-- 筛选按钮 -->
       <div class="gallery-filter">
-        <button 
-          class="filter-btn" 
+        <button
+          class="filter-btn"
           :class="{ active: activeFilter === 'all' }"
           @click="activeFilter = 'all'"
         >
           全部活动
         </button>
-        <button 
-          class="filter-btn" 
+        <button
+          class="filter-btn"
           :class="{ active: activeFilter === 'event' }"
           @click="activeFilter = 'event'"
         >
           活动现场
         </button>
-        <button 
-          class="filter-btn" 
+        <button
+          class="filter-btn"
           :class="{ active: activeFilter === 'operation' }"
           @click="activeFilter = 'operation'"
         >
           设备操作
         </button>
-        <button 
-          class="filter-btn" 
+        <button
+          class="filter-btn"
           :class="{ active: activeFilter === 'team' }"
           @click="activeFilter = 'team'"
         >
@@ -41,11 +41,7 @@
 
       <!-- 瀑布流布局 -->
       <div class="waterfall-grid">
-        <div 
-          v-for="item in filteredGallery" 
-          :key="item.id"
-          class="waterfall-item"
-        >
+        <div v-for="item in filteredGallery" :key="item.id" class="waterfall-item">
           <GalleryCard :item="item" />
         </div>
       </div>
@@ -64,7 +60,7 @@ const filteredGallery = computed(() => {
   if (activeFilter.value === 'all') {
     return galleryData
   }
-  return galleryData.filter(item => item.category === activeFilter.value)
+  return galleryData.filter((item) => item.category === activeFilter.value)
 })
 </script>
 
@@ -130,11 +126,11 @@ const filteredGallery = computed(() => {
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 1rem;
   }
-  
+
   .gallery-filter {
     gap: 0.5rem;
   }
-  
+
   .filter-btn {
     padding: 0.5rem 1rem;
     font-size: 0.9rem;

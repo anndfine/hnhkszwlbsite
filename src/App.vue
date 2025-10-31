@@ -26,7 +26,6 @@ import PositionsSection from '@/components/Sections/PositionsSection.vue'
 import GallerySection from '@/components/Sections/GallerySection.vue'
 import MembersSection from '@/components/Sections/MembersSection.vue'
 
-
 import { onMounted } from 'vue'
 import { initImageLoader, initStarRating } from '@/utils/imageLoader'
 import { initGallery } from '@/utils/gallery'
@@ -37,7 +36,7 @@ onMounted(() => {
   initImageLoader()
   initStarRating()
   initGallery()
-  
+
   // 如果有名人堂JS，可以在这里调用
   // if (typeof (window as any).hall_of_fame_app !== 'undefined') {
   //   (window as any).hall_of_fame_app.test()
