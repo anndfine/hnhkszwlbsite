@@ -65,6 +65,6 @@
   </footer>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { pageCompositionData } from '@/assets/data/pageCompositionData'
 </script>
