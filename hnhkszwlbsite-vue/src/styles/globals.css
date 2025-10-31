@@ -10,7 +10,7 @@
 
 /* 导航栏链接样式 */
 .nav-link-text {
-  color: inherit;
+  /* color: inherit; */
   text-decoration: none;
 }
 
