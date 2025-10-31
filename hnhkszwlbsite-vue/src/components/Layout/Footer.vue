@@ -71,7 +71,3 @@
     </div>
   </footer>
 </template>
-
-<script setup lang="ts">
-// 页脚逻辑可以在这里添加
-</script>

@@ -7,7 +7,7 @@
         <div class="col-lg-6">
           <div class="rounded-4 overflow-hidden shadow-sm">
             <img 
-              data-src="assets/images/67061382aff2c.jpg" 
+              :data-src="benefitImage"
               class="lazyload img-fluid w-100 h-auto object-fit-cover"
               alt="网络部成员活动照片" 
             >
@@ -44,4 +44,6 @@
 
 <script setup lang="ts">
 import { benefitsData } from '@/assets/data/benefitsData'
+// 导入图片资源
+import benefitImage from '@/assets/images/67061382aff2c.jpg'
 </script>
