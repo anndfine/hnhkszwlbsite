@@ -78,26 +78,31 @@ export const initGallery = () => {
 
   // 上一张按钮
   prevBtn?.addEventListener('click', function () {
-    if (currentItems.length <= 1) return
+    if (!currentItems || currentItems.length <= 1) return
 
     currentIndex = (currentIndex - 1 + currentItems.length) % currentItems.length
-    const prevButton = currentItems[currentIndex].querySelector('.view-btn') as HTMLElement
+    const currentItem = currentItems[currentIndex]
+    if (!currentItem) return
+
+    const prevButton = currentItem.querySelector('.view-btn') as HTMLElement
     if (prevButton) loadImage(prevButton)
   })
 
   // 下一张按钮
   nextBtn?.addEventListener('click', function () {
-    if (!currentItems || !currentIndex || currentItems.length <= 1) return
+    if (!currentItems || currentItems.length <= 1) return
 
-    currentIndex = (currentIndex + 1) % currentItems.length;
-    if (!currentItems[currentIndex]) return ;
-    const nextButton = currentItems[currentIndex].querySelector('.view-btn') as HTMLElement
+    currentIndex = (currentIndex + 1) % currentItems.length
+    const currentItem = currentItems[currentIndex]
+    if (!currentItem) return
+
+    const nextButton = currentItem.querySelector('.view-btn') as HTMLElement
     if (nextButton) loadImage(nextButton)
   })
 
   // 键盘导航
   document.addEventListener('keydown', function (e) {
-    if (!imageModal.classList.contains('show')) return
+    if (!imageModal || !imageModal.classList.contains('show')) return
 
     if (e.key === 'ArrowLeft') {
       ; (prevBtn as HTMLElement)?.click()
@@ -114,7 +119,7 @@ export const initGallery = () => {
   const galleryItemsAll = document.querySelectorAll('.waterfall-item')
 
   filterBtns.forEach(btn => {
-    btn.addEventListener('click', function () {
+    btn.addEventListener('click', function (this: HTMLElement) {
       filterBtns.forEach(b => b.classList.remove('active'))
       this.classList.add('active')
 
