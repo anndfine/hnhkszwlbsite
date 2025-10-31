@@ -13,8 +13,7 @@
               <p class="text-muted">期待您的加入</p>
               <div class="mt-3">
                 <span class="fw-semibold">QQ群:</span>
-                <a id="进群链接" href="https://qm.qq.com/q/5gVlLLYjtC" class="text-decoration-none ms-2"
-                  target="_blank">
+                <a id="进群链接" href="https://qm.qq.com/q/5gVlLLYjtC" class="text-decoration-none ms-2" target="_blank">
                   点击跳转加入群聊
                 </a>
               </div>
@@ -25,25 +24,20 @@
         <!-- 页面信息 -->
         <div class="col-lg-4 col-md-6">
           <div class="tech-stats">
+
+
             <h6 class="fw-bold mb-3">页面构成</h6>
-            <div class="progress mb-2" style="height: 20px;">
-              <div class="progress-bar" role="progressbar" style="width: 81.3%;" aria-valuenow="81.3"
-                aria-valuemin="0" aria-valuemax="100">
-                HTML 81.3%
-              </div>
+            <div class="d-flex flex-wrap gap-2">
+              <span v-for="(item, index) in pageCompositionData" :key="index" class="badge px-3 py-2"
+                :class="item.colorClass">
+                {{ item.name }} {{ item.percentage }}%
+              </span>
             </div>
-            <div class="progress mb-2" style="height: 20px;">
-              <div class="progress-bar bg-success" role="progressbar" style="width: 9.9%;"
-                aria-valuenow="10.4" aria-valuemin="0" aria-valuemax="100">
-                JavaScript 9.9%
-              </div>
-            </div>
-            <div class="progress" style="height: 20px;">
-              <div class="progress-bar bg-info" role="progressbar" style="width: 8.8%;"
-                aria-valuenow="8.8" aria-valuemin="0" aria-valuemax="100">
-                CSS 8.8%
-              </div>
-            </div>
+
+
+
+
+
           </div>
         </div>
 
@@ -56,8 +50,7 @@
               <span>All Rights Reserved</span>
             </div>
             <div class="mb-3">
-              <a href="https://github.com/anndfine/hnhkszwlbsite" class="text-decoration-none"
-                target="_blank">
+              <a href="https://github.com/anndfine/hnhkszwlbsite" class="text-decoration-none" target="_blank">
                 <i class="bi bi-github"></i>
                 在Github上编辑此页
               </a>
@@ -71,3 +64,7 @@
     </div>
   </footer>
 </template>
+
+<script setup>
+import { pageCompositionData } from '@/assets/data/pageCompositionData'
+</script>
