@@ -38,3 +38,4 @@ __screenshots__/
 test-results/
 playwright-report/
 server.js
+node_modules
