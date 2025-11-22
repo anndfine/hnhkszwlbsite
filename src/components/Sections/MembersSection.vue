@@ -14,11 +14,7 @@
         <div class="col-12">
           <h5 class="text-center border-bottom pb-2 mb-4">2027届骨干</h5>
         </div>
-        <div
-          v-for="member in membersData['2027']"
-          :key="member.name"
-          class="col-lg-4 col-md-6 mb-3"
-        >
+        <div v-for="member in membersData['2027']" :key="member.name" class="col mb-3">
           <MemberCard :member="member" />
         </div>
       </div>
@@ -28,11 +24,7 @@
         <div class="col-12">
           <h5 class="text-center border-bottom pb-2 mb-4">2026届骨干</h5>
         </div>
-        <div
-          v-for="member in membersData['2026']"
-          :key="member.name"
-          class="col-lg-4 col-md-6 mb-3"
-        >
+        <div v-for="member in membersData['2026']" :key="member.name" class="col mb-3">
           <MemberCard :member="member" />
         </div>
       </div>
@@ -42,19 +34,11 @@
         <div class="col-12">
           <h5 class="text-center border-bottom pb-2 mb-4">往届骨干</h5>
         </div>
-        <div
-          v-for="member in membersData['legacy']"
-          :key="member.name"
-          class="col-lg-3 col-md-4 col-6 mb-3"
-        >
+        <div v-for="member in membersData['legacy']" :key="member.name" class="col mb-3">
           <div class="text-center">
-            <img
-              :data-src="member.avatar"
-              class="lazyload rounded-circle img-thumbnail border-warning border-2 mb-2"
-              width="70"
-              height="70"
-              :alt="member.name"
-            />
+            <img :data-src="member.avatar || '/assets/images/avatar/default.jpg'"
+              class="lazyload rounded-circle img-thumbnail border-warning border-2 mb-2" width="70" height="70"
+              :alt="member.name" />
             <h6 class="fw-bold mb-1 small">{{ member.name }}</h6>
             <p class="text-muted small mb-0">{{ member.position }}</p>
           </div>
