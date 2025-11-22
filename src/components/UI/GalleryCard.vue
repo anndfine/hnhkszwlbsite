@@ -10,7 +10,9 @@
     <div class="card-info">
       <h4>{{ item.title }}</h4>
       <p>{{ item.description }}</p>
-      <button class="view-btn" @click="openModal"><i class="bi bi-zoom-in"></i> 查看大图</button>
+      <button class="view-btn" data-bs-toggle="modal" data-bs-target="#imageModal" :data-title="item.title"
+        :data-description="item.description" :data-preview="item.preview" :data-full="item.full"
+        :data-category="item.category"><i class="bi bi-zoom-in"></i> 查看大图</button>
     </div>
   </div>
 </template>
@@ -33,10 +35,6 @@ const getCategoryName = (category: string) => {
   return categoryMap[category] || '其他'
 }
 
-const openModal = () => {
-  // 这里可以添加打开模态框的逻辑
-  console.log('打开图片模态框')
-}
 </script>
 
 <style scoped>

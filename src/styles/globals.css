@@ -11,11 +11,13 @@
 /* 导航栏链接样式 */
 .nav-link-text {
   /* color: inherit; */
+  color: #f0fffa;
   text-decoration: none;
 }
 
 .nav-link-text:hover {
-  color: inherit;
+  /* color: inherit; */
+  color: #d1f8e1;
 }
 
 /* 确保图片懒加载有过渡效果 */

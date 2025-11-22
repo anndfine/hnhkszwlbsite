@@ -28,6 +28,11 @@ coverage
 
 .eslintcache
 
+#VSCode
+.vscode/*
+!.vscode/extensions.json
+
+
 # Cypress
 /cypress/videos/
 /cypress/screenshots/

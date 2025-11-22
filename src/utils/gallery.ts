@@ -13,6 +13,12 @@ export const initGallery = () => {
     return
   }
 
+  // 检查是否已经初始化过
+  if ((imageModal as any)._galleryInitialized) {
+    return
+  }
+  (imageModal as any)._galleryInitialized = true
+
   // 收集所有图片项
   const galleryItems = Array.from(document.querySelectorAll('.waterfall-item'))
   let currentIndex = 0
@@ -53,27 +59,97 @@ export const initGallery = () => {
     if (description && modalDescription) modalDescription.textContent = description
 
     // 显示加载状态
-    if (imgLoading) imgLoading.style.display = 'flex'
+    if (imgLoading) {
+      imgLoading.style.display = 'flex'
+      imgLoading.style.opacity = '1'
+    }
+
+    // 重置图片源
+    modalImage.src = ''
+    modalImage.onload = null
+    modalImage.onerror = null
+
+    // 如果当前图片已经是目标图片，直接显示
+    if (modalImage.src === fullSrc || modalImage.src === previewSrc) {
+      if (imgLoading) {
+        imgLoading.style.display = 'none'
+      }
+      return
+    }
 
     // 先加载预览图
     if (previewSrc) {
       modalImage.src = previewSrc
+      modalImage.onload = function () {
+        // 预览图加载成功后，开始加载原图
+        loadFullImage(fullSrc)
+      }
+      modalImage.onerror = function () {
+        // 如果预览图加载失败，直接加载原图
+        loadFullImage(fullSrc)
+      }
+    } else {
+      // 如果没有预览图，直接加载原图
+      loadFullImage(fullSrc)
     }
+
     if (title) modalImage.alt = title
+  }
+
+  function loadFullImage(fullSrc: string | null) {
+    if (!fullSrc) {
+      // 如果没有原图，隐藏加载状态
+      if (imgLoading) {
+        imgLoading.style.display = 'none'
+      }
+      return
+    }
+
+    // 如果原图已经加载过，直接显示
+    if (modalImage.src === fullSrc) {
+      modalImage.style.opacity = '1'
+      if (imgLoading) {
+        imgLoading.style.display = 'none'
+      }
+      return
+    }
 
     // 加载原图
-    if (fullSrc) {
-      const fullImage = new Image()
-      fullImage.onload = function () {
-        modalImage.src = fullSrc
-        if (imgLoading) imgLoading.style.display = 'none'
+    const fullImage = new Image()
+    fullImage.onload = function () {
+      // 在设置modalImage.src之前，先移除所有事件监听器
+      modalImage.onload = null
+      modalImage.onerror = null
+
+      modalImage.src = fullSrc
+      // 添加淡入效果
+      modalImage.style.opacity = '0'
+      setTimeout(() => {
+        modalImage.style.transition = 'opacity 0.3s ease-in-out'
+        modalImage.style.opacity = '1'
+      }, 50)
+
+      // 隐藏加载状态
+      if (imgLoading) {
+        imgLoading.style.transition = 'opacity 0.3s ease-in-out'
+        imgLoading.style.opacity = '0'
+        setTimeout(() => {
+          imgLoading.style.display = 'none'
+        }, 300)
       }
-      fullImage.onerror = function () {
-        if (imgLoading) imgLoading.style.display = 'none'
-        console.error('大图加载失败:', fullSrc)
-      }
-      fullImage.src = fullSrc
     }
+    fullImage.onerror = function () {
+      console.error('大图加载失败:', fullSrc)
+      // 隐藏加载状态
+      if (imgLoading) {
+        imgLoading.style.transition = 'opacity 0.3s ease-in-out'
+        imgLoading.style.opacity = '0'
+        setTimeout(() => {
+          imgLoading.style.display = 'none'
+        }, 300)
+      }
+    }
+    fullImage.src = fullSrc
   }
 
   // 上一张按钮
@@ -105,9 +181,9 @@ export const initGallery = () => {
     if (!imageModal || !imageModal.classList.contains('show')) return
 
     if (e.key === 'ArrowLeft') {
-      ;(prevBtn as HTMLElement)?.click()
+      ; (prevBtn as HTMLElement)?.click()
     } else if (e.key === 'ArrowRight') {
-      ;(nextBtn as HTMLElement)?.click()
+      ; (nextBtn as HTMLElement)?.click()
     } else if (e.key === 'Escape') {
       const modalInstance = (window as any).bootstrap?.Modal?.getInstance(imageModal)
       modalInstance?.hide()
@@ -127,9 +203,9 @@ export const initGallery = () => {
 
       galleryItemsAll.forEach((item) => {
         if (filterValue === '*' || item.classList.contains(filterValue.slice(1))) {
-          ;(item as HTMLElement).style.display = 'block'
+          ; (item as HTMLElement).style.display = 'block'
         } else {
-          ;(item as HTMLElement).style.display = 'none'
+          ; (item as HTMLElement).style.display = 'none'
         }
       })
     })
