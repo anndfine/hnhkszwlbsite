@@ -42,7 +42,7 @@
             <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body p-0 position-relative d-flex justify-content-center align-items-center"
-            style="min-height: calc(100vh - 120px);">
+            style="min-height: calc(100vh - 150px);">
             <!-- 加载状态 -->
             <div id="imgLoading"
               class="position-absolute top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center bg-dark"
