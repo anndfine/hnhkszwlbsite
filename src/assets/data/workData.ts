@@ -24,7 +24,7 @@ export const workData: WorkItem[] = [
     features: ['音响系统调试与控制', '灯光效果设计与执行', '舞台设备技术支持'],
   },
   {
-    title: '一楼会议室设备操作',
+    title: '学校会议室设备操作',
     description: '学生会使用一楼会议室时在操作位进行控制与保障',
     image: workImage2,
     icon: 'bi-projector-fill',
