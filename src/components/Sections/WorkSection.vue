@@ -13,7 +13,7 @@
               <i class="bi bi-check-circle-fill text-warning me-2"></i>教学楼小礼堂活动设备操作
             </span>
             <span class="d-flex align-items-center">
-              <i class="bi bi-check-circle-fill text-warning me-2"></i>学生会会议室设备操作
+              <i class="bi bi-check-circle-fill text-warning me-2"></i>学校会议室设备操作
             </span>
             <span class="d-flex align-items-center">
               <i class="bi bi-check-circle-fill text-warning me-2"></i>校运会社团日设备辅助
