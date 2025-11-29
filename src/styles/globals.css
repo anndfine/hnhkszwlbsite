@@ -1,0 +1,66 @@
+/* src/styles/globals.css */
+/* 确保Bootstrap样式正确引入 */
+.backgound-main {
+  background-color: #f8f9fa;
+}
+
+.mutedtext {
+  color: #6c757d;
+}
+
+/* 导航栏链接样式 */
+.nav-link-text {
+  /* color: inherit; */
+  color: #f0fffa;
+  text-decoration: none;
+}
+
+.nav-link-text:hover {
+  /* color: inherit; */
+  color: #d1f8e1;
+}
+
+/* 确保图片懒加载有过渡效果 */
+.lazyload {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.lazyloaded {
+  opacity: 1;
+}
+
+/* 轮播图相关样式 */
+.carousel-item {
+  transition: transform 0.6s ease-in-out;
+}
+
+.carousel-overlay {
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.3) 0%,
+    rgba(0, 0, 0, 0.5) 50%,
+    rgba(0, 0, 0, 0.7) 100%
+  );
+  pointer-events: none;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+  .display-2 {
+    font-size: 2rem;
+  }
+
+  .display-5 {
+    font-size: 1.5rem;
+  }
+}
+
+/* 确保轮播图在全屏时正常显示 */
+.min-vh-100 {
+  min-height: 100vh;
+}
+
+.object-fit-cover {
+  object-fit: cover;
+}

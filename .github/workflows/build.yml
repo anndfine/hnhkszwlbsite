@@ -1,0 +1,54 @@
+name: Vue项目自动构建 (Vue Project Auto Build)
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  Build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    # 步骤1：获取代码
+    - name: 获取源代码
+      uses: actions/checkout@v4
+      
+    # 步骤2：配置Node.js环境
+    - name: 配置Node.js环境
+      uses: actions/setup-node@v4
+      with:
+        node-version: '22'
+        # 缓存node_modules目录，加速后续构建
+        cache: 'npm'
+        
+    # 步骤3：安装项目依赖
+    - name: 安装项目依赖
+      run: |
+        echo "开始安装项目依赖..."
+        npm install
+        echo "依赖安装完成"
+        
+    # 步骤4：执行项目构建
+    - name: 执行项目构建
+      run: |
+        echo "开始构建项目..."
+        npm run build
+        echo "项目构建完成"
+        
+    # 步骤5：检查构建结果
+    - name: 检查构建输出
+      run: |
+        echo "构建输出目录结构："
+        find dist/ -type f -name "*.html" -o -name "*.js" -o -name "*.css" | head -10
+        echo "构建文件总数："
+        find dist/ -type f | wc -l
+        
+    # 步骤6：保存构建产物
+    - name: 保存构建产物
+      uses: actions/upload-artifact@v4
+      with:
+        name: 网站构建结果
+        path: dist/
+        retention-days: 30
