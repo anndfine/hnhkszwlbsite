@@ -1,4 +1,5 @@
 <!-- src/components/UI/GalleryCard.vue -->
+<!-- src/components/UI/GalleryCard.vue -->
 <template>
   <div class="gallery-card">
     <div class="position-relative overflow-hidden">
@@ -10,9 +11,16 @@
     <div class="card-info">
       <h4>{{ item.title }}</h4>
       <p>{{ item.description }}</p>
-      <button class="view-btn" data-bs-toggle="modal" data-bs-target="#imageModal" :data-title="item.title"
-        :data-description="item.description" :data-preview="item.preview" :data-full="item.full"
-        :data-category="item.category"><i class="bi bi-zoom-in"></i> 查看大图</button>
+      <button class="view-btn" 
+              data-bs-toggle="modal" 
+              data-bs-target="#imageModal" 
+              :data-title="item.title"
+              :data-description="item.description" 
+              :data-preview="item.preview" 
+              :data-full="item.full"
+              :data-category="item.category">
+        <i class="bi bi-zoom-in"></i> 查看大图
+      </button>
     </div>
   </div>
 </template>
