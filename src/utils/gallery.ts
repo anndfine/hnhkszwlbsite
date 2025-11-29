@@ -44,7 +44,7 @@ export const initGallery = () => {
     const currentCard = button.closest('.waterfall-item')
     if (currentCard) {
       currentIndex = currentItems.indexOf(currentCard)
-      // 处理索引不存在的情况
+      // 处理索引不存在的状况
       if (currentIndex === -1) currentIndex = 0
     } else {
       currentIndex = 0
