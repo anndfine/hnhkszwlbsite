@@ -110,7 +110,7 @@ export const initImageLoader = () => {
           console.error('移除.lazyload类名时出错:', e)
         }
         console.log('图片加载完成，释放对象URL:', objectUrl)
-        URL.revokeObjectURL(objectUrl)
+        // URL.revokeObjectURL(objectUrl)
       }
 
       return true

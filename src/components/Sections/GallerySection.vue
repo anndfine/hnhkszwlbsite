@@ -33,7 +33,6 @@
     </div>
 
     <!-- 图片模态框 -->
-    <!-- 图片模态框 -->
     <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-fullscreen">
         <div class="modal-content bg-dark">
