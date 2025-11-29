@@ -27,7 +27,7 @@ export const initImageLoader = () => {
     }
     
     // 设置新的防抖定时器
-    debounceTimeout = setTimeout(() => {
+    debounceTimeout = window.setTimeout(() => {
       console.log('防抖延迟结束，开始处理图片')
       processImages()
     }, TRIGGER_CONFIG.debounceDelay)
@@ -40,7 +40,7 @@ export const initImageLoader = () => {
       return
     }
 
-    lazyQueryTimeout = setTimeout(() => {
+    lazyQueryTimeout = window.setTimeout(() => {
       lazyQueryCount++
       console.log(`第${lazyQueryCount}次持续懒查询检查`)
       processImages()
