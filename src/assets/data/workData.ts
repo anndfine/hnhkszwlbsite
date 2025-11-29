@@ -33,7 +33,7 @@ export const workData: WorkItem[] = [
   },
   {
     title: '校运会社团日',
-    description: '在校运会社团日时，协调并辅助租借的设备',
+    description: '在校运会社团日时，协调并辅助学校租借的设备',
     image: workImage3,
     icon: 'bi-trophy-fill',
     alt: '校运会社团日',

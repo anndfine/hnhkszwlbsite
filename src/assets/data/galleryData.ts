@@ -73,8 +73,8 @@ export const galleryData: GalleryItem[] = [
   },
   {
     id: '3',
-    title: '校园十大歌手',
-    description: '活动现场的导播与灯控协作，创造完美舞台效果',
+    title: '校园歌手大赛',
+    description: '活动现场的导播与灯控，共同协作创造完美舞台效果',
     preview: image3Preview,
     full: image3Full,
     category: 'operation',
