@@ -27,14 +27,13 @@ import GallerySection from '@/components/Sections/GallerySection.vue'
 import MembersSection from '@/components/Sections/MembersSection.vue'
 
 import { onMounted } from 'vue'
-import { initImageLoader, initStarRating } from '@/utils/imageLoader'
+import { initImageLoader } from '@/utils/imageLoader'
 import { initGallery } from '@/utils/gallery'
 
 onMounted(() => {
   console.log('初始化...')
   // 页面加载完成后初始化各种功能
   initImageLoader()
-  initStarRating()
   initGallery()
 
   // 如果有名人堂JS，可以在这里调用
