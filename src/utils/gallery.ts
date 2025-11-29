@@ -50,7 +50,7 @@ export const initGallery = () => {
       currentIndex = 0
     }
 
-    // 加载当前图片
+    // 加载当前的图片
     loadImage(button)
   })
 
