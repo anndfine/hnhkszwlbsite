@@ -5,6 +5,9 @@ export interface Member {
   position: string
   year: string
 }
+
+// 当前进度 小群 蒙宣
+
 import avatar_2027_1 from '@/assets/images/avatar/023a9060-48ba-41cd-a317-764abfb322e7.jpg'
 import avatar_2027_2 from '@/assets/images/avatar/54b2931c-0550-45f6-bd87-5f6809c385cc.jpg'
 import avatar_2027_3 from '@/assets/images/avatar/b64998f0-2f1e-4fd8-a084-bac821c6f403.jpg'
@@ -13,11 +16,16 @@ import avatar_2026_1 from '@/assets/images/avatar/67061aeceaf63.jpg'
 import avatar_2026_2 from '@/assets/images/avatar/67061aec52429.jpg'
 import avatar_2026_3 from '@/assets/images/avatar/67061aec39e4d.jpg'
 import avatar_2026_4 from '@/assets/images/avatar/1a3298ba-98ad-432b-8830-d113f58d1dad.jpg'
-import avatar7 from '@/assets/images/avatar/07785846-7733-4b5c-9657-6d29f530784f.jpg'
+import avatar_2025_1 from '@/assets/images/avatar/07785846-7733-4b5c-9657-6d29f530784f.jpg'
+import avatar_2025_2 from '@/assets/images/avatar/9a9e43a1-4bd0-4697-9360-8e9923dfeb0d.jpg'
 import avatar8 from '@/assets/images/avatar/6708b83fdd463.jpg'
-import avatar9 from '@/assets/images/avatar/6708b83f38d0c.jpg'
+import avatar9 from '@/assets/images/avatar/ef3bc7a5-23be-4f16-aaea-dcbef5d236c7.jpg'
+import avatar10 from '@/assets/images/avatar/36971b92-be12-478e-8901-7b5799f81091.jpg'
 
 export const membersData: Record<string, Member[]> = {
+  '2028': [
+
+  ],
   '2027': [
     {
       avatar: avatar_2027_1,
@@ -70,12 +78,27 @@ export const membersData: Record<string, Member[]> = {
       year: '2026',
     },
   ],
-  legacy: [
+  '2025':[
     {
-      avatar: avatar7,
+      avatar: avatar_2025_1,
       name: 'The_Mercury〔水星〕',
       position: '2025届 部长',
       year: '2025',
+    },
+    {
+      avatar: avatar_2025_2,
+      name: '赵家宽',
+      position: '2025届',
+      year: '2025'
+    }
+  ],
+  legacy: [
+    {
+      avatar: avatar10,
+      name: "黄奕赫",
+      position: '2024届 部长',
+      year: '2024',
+
     },
     {
       avatar: avatar8,
