@@ -15,13 +15,13 @@
             <h5 class="text-center border-bottom pb-2 mb-4">{{ getYearTitle(year) }}</h5>
           </div>
           <template v-if="year === 'legacy'">
-            <div v-for="member in membersData[year]" :key="member.name" class="col mb-3">
+            <div v-for="member in membersData[year]" :key="member.name" class="col-auto mb-3">
               <div class="text-center">
                 <img
                   :data-src="member.avatar || '/assets/images/avatar/default.jpg'"
                   class="lazyload rounded-circle img-thumbnail border-warning border-2 mb-2"
-                  width="70"
-                  height="70"
+                  width="84"
+                  height="84"
                   :alt="member.name"
                 />
                 <h6 class="fw-bold mb-1 small">{{ member.name }}</h6>
