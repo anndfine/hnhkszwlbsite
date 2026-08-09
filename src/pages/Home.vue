@@ -16,7 +16,7 @@
 
 <script setup lang="ts">
 import Navbar from '@/components/Navbar.vue'
-import Footer from '@/components/Layout/Footer.vue'
+import Footer from '@/components/Footer.vue'
 import HeroSection from '@/components/Sections/HeroSection.vue'
 import WorkSection from '@/components/Sections/WorkSection.vue'
 import ServiceSection from '@/components/Sections/ServiceSection.vue'
