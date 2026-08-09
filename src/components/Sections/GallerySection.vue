@@ -1,203 +1,272 @@
-<!-- src/components/Sections/GallerySection.vue -->
+<!-- src/components/Sections/GallerySection.vue
+     活动实拍模块：
+     - 数据驱动渲染 + 分类筛选（全部 / 活动现场 / 设备操作 / 团队合照）
+     - 桌面 4 列网格，移动端自动 1/2 列
+     - reveal 视口入场动画 + 组件化全屏 Lightbox 预览 -->
 <template>
-  <section class="gallery-section" id="活动实拍">
-    <div class="container">
-      <div class="section-header">
-        <h2>活动实拍</h2>
-        <p>来自一些奇妙的拍摄者，记录我们工作的精彩瞬间</p>
+  <section ref="sectionEl" class="gallery-section" id="活动实拍">
+    <div class="gallery-container">
+      <!-- 标题 -->
+      <div ref="headerEl" class="gallery-header">
+        <h2 class="gallery-title">活动实拍</h2>
+        <p class="gallery-subtitle">GALLERY</p>
       </div>
 
-      <!-- 筛选按钮 -->
+      <!-- 分类筛选（数据驱动） -->
       <div class="gallery-filter">
-        <button class="filter-btn" :class="{ active: activeFilter === 'all' }" @click="activeFilter = 'all'">
-          所有照片
-        </button>
-        <button class="filter-btn" :class="{ active: activeFilter === 'event' }" @click="activeFilter = 'event'">
-          活动现场
-        </button>
-        <button class="filter-btn" :class="{ active: activeFilter === 'operation' }"
-          @click="activeFilter = 'operation'">
-          设备操作
-        </button>
-        <button class="filter-btn" :class="{ active: activeFilter === 'team' }" @click="activeFilter = 'team'">
-          团队合照
+        <button
+          v-for="category in galleryCategories"
+          :key="category.key"
+          type="button"
+          class="gallery-filter__btn"
+          :class="{ 'is-active': activeFilter === category.key }"
+          @click="activeFilter = category.key"
+        >
+          {{ category.label }}
         </button>
       </div>
 
-      <!-- 瀑布流布局 -->
-      <div class="waterfall-grid">
-        <div v-for="item in filteredGallery" :key="item.id" class="waterfall-item">
-          <GalleryCard :item="item" />
+      <!-- 图片网格 -->
+      <div class="gallery-grid">
+        <div
+          v-for="(item, index) in filteredItems"
+          :key="item.image"
+          class="gallery-grid__item"
+          :style="{ transitionDelay: `${Math.min(index, 7) * 50}ms` }"
+        >
+          <GalleryCard
+            :item="item"
+            :active="lightboxOpen && lightboxIndex === index"
+            @open="openLightbox(index)"
+          />
         </div>
       </div>
     </div>
 
-    <!-- 图片模态框 -->
-    <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-fullscreen">
-        <div class="modal-content bg-dark">
-          <div class="modal-header border-0 bg-dark text-white">
-            <h5 class="modal-title" id="imageModalTitle">图片预览</h5>
-            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body p-0 position-relative d-flex justify-content-center align-items-center"
-            style="min-height: calc(100vh - 150px);">
-            <!-- 加载状态 -->
-            <div id="imgLoading"
-              class="position-absolute top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center bg-dark"
-              style="display: none; z-index: 10;">
-              <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;">
-                <span class="visually-hidden">加载中...</span>
-              </div>
-            </div>
-
-            <!-- 图片容器 -->
-            <div class="d-flex justify-content-center align-items-center w-100 h-100 position-relative">
-              <img id="modalImage" class="img-fluid" alt="预览图片"
-                style="max-width: 100%; max-height: 100%; object-fit: contain;">
-            </div>
-          </div>
-          <div class="modal-footer border-0 bg-dark text-white justify-content-between">
-            <!-- 上一张按钮 -->
-            <button type="button" class="btn btn-outline-light prev-btn">
-              <i class="bi bi-arrow-left-circle me-2"></i>上一张
-            </button>
-
-            <!-- 图片信息 -->
-            <div class="text-center flex-grow-1 mx-3">
-              <h4 id="modalImageTitle" class="mb-1 fs-5"></h4>
-              <p id="modalImageDescription" class="text-light mb-0 small opacity-75"></p>
-            </div>
-
-            <!-- 下一张按钮 -->
-            <button type="button" class="btn btn-outline-light next-btn">
-              下一张<i class="bi bi-arrow-right-circle ms-2"></i>
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
+    <!-- 全屏图片预览 -->
+    <GalleryLightbox v-model="lightboxOpen" v-model:index="lightboxIndex" :items="filteredItems" />
   </section>
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted } from 'vue'
-import { galleryData } from '@/assets/data/galleryData'
+import { computed, nextTick, onMounted, onUnmounted, ref, watch } from 'vue'
+import { galleryCategories, galleryData } from '@/data/gallery'
 import GalleryCard from '@/components/UI/GalleryCard.vue'
-import { initGallery } from '@/utils/gallery'
+import GalleryLightbox from '@/components/UI/GalleryLightbox.vue'
 
+/* ---------- 分类筛选 ---------- */
 const activeFilter = ref('all')
 
-const filteredGallery = computed(() => {
-  if (activeFilter.value === 'all') {
-    return galleryData
-  }
+const filteredItems = computed(() => {
+  if (activeFilter.value === 'all') return galleryData
   return galleryData.filter((item) => item.category === activeFilter.value)
 })
 
+/* ---------- 图片预览 Lightbox ---------- */
+const lightboxOpen = ref(false)
+const lightboxIndex = ref(0)
+
+const openLightbox = (index: number) => {
+  lightboxIndex.value = index
+  lightboxOpen.value = true
+}
+
+// 筛选变化后确保索引不越界
+watch(filteredItems, () => {
+  if (lightboxIndex.value >= filteredItems.value.length) {
+    lightboxIndex.value = 0
+  }
+})
+
+/* ---------- 入场 reveal 动画 ---------- */
+// 与其他板块（核心成员/部门内岗位等）保持一致：进入视口加 .is-visible 触发动画，
+// 离开视口移除，每次进出 viewport 都会重新触发。
+// 注意：reveal 类加在外层 .gallery-grid__item 包裹 div（静态 class，无动态 class 绑定，
+// Vue 不会覆写其 class），避免加到 GalleryCard 根元素上被其 active 类绑定补丁抹掉。
+const sectionEl = ref<HTMLElement | null>(null)
+const headerEl = ref<HTMLElement | null>(null)
+let observer: IntersectionObserver | null = null
+
+const observeReveal = () => {
+  observer?.disconnect()
+  observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible')
+        } else {
+          entry.target.classList.remove('is-visible')
+        }
+      })
+    },
+    { threshold: 0.15, rootMargin: '0px 0px -40px 0px' },
+  )
+
+  // 卡片是组件，ref 拿不到 DOM 元素，改为在 section 内查询
+  const nodes: HTMLElement[] = []
+  if (headerEl.value) nodes.push(headerEl.value)
+  const cards = sectionEl.value?.querySelectorAll<HTMLElement>('.gallery-grid__item') ?? []
+  cards.forEach((card) => nodes.push(card))
+  nodes.forEach((node) => observer?.observe(node))
+}
+
 onMounted(() => {
-  // 初始化图片画廊功能，包括模态框
-  initGallery()
+  observeReveal()
+})
+
+onUnmounted(() => {
+  observer?.disconnect()
+})
+
+// 切换分类后，对重新渲染的卡片重新触发 reveal
+watch(activeFilter, async () => {
+  await nextTick()
+  observeReveal()
 })
 </script>
 
-// ... existing code ...
 <style scoped>
 .gallery-section {
+  background: #1a1a1a;
   padding: 5rem 0;
-  background: white;
 }
 
-.section-header {
+.gallery-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* 标题（与核心成员/部门内岗位板块风格一致） */
+.gallery-header {
   text-align: center;
   margin-bottom: 3rem;
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
 }
 
-.section-header h2 {
+.gallery-header.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.gallery-title {
   font-size: 2.5rem;
-  color: #2c3e50;
-  margin-bottom: 1rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
 }
 
-.section-header p {
-  color: #6c757d;
-  font-size: 1.1rem;
+.gallery-subtitle {
+  font-size: 1rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0.75rem 0 0 0;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
 }
 
+/* 筛选按钮（深色主题） */
 .gallery-filter {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 1rem;
-  margin-bottom: 3rem;
+  gap: 0.75rem;
+  margin-bottom: 2.5rem;
 }
 
-.filter-btn {
+.gallery-filter__btn {
+  appearance: none;
+  padding: 0.6rem 1.5rem;
+  font: inherit;
+  font-size: 0.9375rem;
+  color: rgba(255, 255, 255, 0.6);
   background: transparent;
-  border: 2px solid #dee2e6;
-  color: #6c757d;
-  padding: 0.75rem 1.5rem;
-  border-radius: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 999px;
   cursor: pointer;
-  transition: all 0.3s;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
 }
 
-.filter-btn:hover {
-  border-color: #007bff;
-  color: #007bff;
+.gallery-filter__btn:hover {
+  color: rgba(255, 255, 255, 0.85);
+  border-color: rgba(255, 255, 255, 0.35);
 }
 
-.filter-btn.active {
+.gallery-filter__btn.is-active {
   background: #007bff;
   border-color: #007bff;
-  color: white;
+  color: #fff;
 }
 
-.waterfall-grid {
+/* 图片网格：桌面 4 列 */
+.gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 1.5rem;
 }
 
-/* 模态框自定义样式 */
-:deep(.modal-fullscreen .modal-content) {
-  border-radius: 0;
+/* 卡片入场动画（延迟由内联 transitionDelay 控制） */
+.gallery-grid__item {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
 }
 
-:deep(.modal-fullscreen .modal-body) {
-  overflow: hidden;
+.gallery-grid__item.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-:deep(.modal-fullscreen img) {
-  transition: transform 0.3s ease-in-out;
-}
-
-:deep(.modal-fullscreen img:hover) {
-  transform: scale(1.02);
+@media (max-width: 1024px) {
+  .gallery-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 @media (max-width: 768px) {
-  .waterfall-grid {
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 1rem;
+  .gallery-section {
+    padding: 3rem 0;
+  }
+
+  .gallery-container {
+    padding: 0 1rem;
+  }
+
+  .gallery-title {
+    font-size: 1.75rem;
+  }
+
+  .gallery-subtitle {
+    font-size: 0.875rem;
   }
 
   .gallery-filter {
     gap: 0.5rem;
   }
 
-  .filter-btn {
-    padding: 0.5rem 1rem;
-    font-size: 0.9rem;
+  .gallery-filter__btn {
+    padding: 0.5rem 1.1rem;
+    font-size: 0.875rem;
   }
 
-  :deep(.modal-footer) {
-    flex-direction: column;
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
   }
+}
 
-  :deep(.modal-footer .btn) {
-    width: 100%;
+@media (max-width: 480px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
   }
 }
 </style>
