@@ -9,8 +9,9 @@ export const initGallery = () => {
   const prevBtn = document.querySelector('.prev-btn')
   const nextBtn = document.querySelector('.next-btn')
 
+  // 画廊模块已重构为 Vue 组件（GallerySection + GalleryLightbox）实现，
+  // 旧版基于 Bootstrap 模态框的 DOM 已不存在，此处静默返回以兼容 Home.vue 的调用。
   if (!imageModal || !modalImage || !modalTitle || !modalDescription || !imgLoading) {
-    console.error('画廊所需的DOM元素不完整')
     return
   }
 
@@ -73,8 +74,8 @@ export const initGallery = () => {
     const fullSrc = button.getAttribute('data-full')
 
     // 更新模态框信息
-    if(modalTitle) modalTitle.textContent = title
-    if(modalDescription) modalDescription.textContent = description
+    if (modalTitle) modalTitle.textContent = title
+    if (modalDescription) modalDescription.textContent = description
     modalImage.alt = title
 
     if (imgLoading) {
