@@ -25,6 +25,8 @@ export interface FooterContactItem {
   text?: string
   /** 站外链接地址 */
   href?: string
+  /** 是否加下划线强调（类似 <u> 标签） */
+  underline?: boolean
 }
 
 export interface FooterData {
@@ -41,10 +43,10 @@ export interface FooterData {
     title: string
     items: FooterContactItem[]
   }
+  /** 项目语言构成区块标题 */
+  languagesTitle: string
   copyright: {
     owner: string
-    /** 备案号（如 '琼ICP备12345678号-1'），为空则不展示 */
-    icp: string
     /** 版权栏小字说明 */
     notice: string
   }
@@ -78,10 +80,18 @@ export const footerData: FooterData = {
         href: 'https://qm.qq.com/q/HWrYTzo2EU',
       },
       {
+        icon: 'bi bi-envelope',
+        label: '邮箱',
+        // 占位邮箱，请替换为部门公开邮箱
+        text: 'contact@wlb.yt437700.top',
+        href: 'mailto:contact@wlb.yt437700.top',
+      },
+      {
         icon: 'bi bi-github',
         label: 'GitHub',
         text: '在 GitHub 上编辑此站',
         href: 'https://github.com/yt437700/hnhkszwlbsite',
+        underline: true,
       },
       {
         icon: 'bi bi-geo-alt',
@@ -92,7 +102,7 @@ export const footerData: FooterData = {
   },
   copyright: {
     owner: '海口市第四中学网络部',
-    icp: '',
     notice: '为保护隐私，成员信息仅展示社交平台昵称；部分往届成员信息因时间久远暂缺。',
   },
+  languagesTitle: '项目语言构成',
 }

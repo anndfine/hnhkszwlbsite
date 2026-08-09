@@ -1,13 +1,14 @@
 <!-- src/components/Footer.vue
-     页脚组件：数据驱动（src/data/footer.ts）
-     - 桌面多列（简介 / 快速导航 / 联系信息）+ 底部版权栏
+     页脚组件：数据驱动（src/assets/data/footer.ts + languages.ts）
+     - 桌面多列（简介 / 快速导航 / 联系信息 / 项目语言构成）+ 底部版权栏
      - ≤768px 单列布局，链接增大点击热区
      - 站内路由用 router-link；站外链接用 <a target="_blank" rel="noopener">
+     - 语言构成百分比由数据自动计算
      - 版权年份 JS 动态获取 -->
 <template>
   <footer id="关于" class="site-footer">
     <div class="site-footer__container">
-      <!-- 主内容：简介 / 快速导航 / 联系信息 -->
+      <!-- 主内容：简介 / 快速导航 / 联系信息 / 项目语言构成 -->
       <div class="site-footer__grid">
         <!-- 部门简介 -->
         <div class="site-footer__col site-footer__col--about">
@@ -59,12 +60,24 @@
                 v-if="item.href"
                 :href="item.href"
                 class="site-footer__link site-footer__link--contact"
+                :class="{ 'site-footer__link--underline': item.underline }"
                 target="_blank"
                 rel="noopener"
               >
                 {{ item.text }}
               </a>
               <span v-else class="site-footer__text">{{ item.text }}</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- 项目语言构成 -->
+        <div class="site-footer__col site-footer__col--languages">
+          <h3 class="site-footer__title">{{ footerData.languagesTitle }}</h3>
+          <ul class="site-footer__lang-list">
+            <li v-for="lang in languages" :key="lang.name" class="site-footer__lang-item">
+              <span class="site-footer__lang-name">{{ lang.name }}</span>
+              <span class="site-footer__lang-percent">{{ lang.percent }}%</span>
             </li>
           </ul>
         </div>
@@ -78,9 +91,6 @@
         <p class="site-footer__copyright">
           © {{ currentYear }} {{ footerData.copyright.owner }} · All Rights Reserved
         </p>
-        <p v-if="footerData.copyright.icp" class="site-footer__icp">
-          {{ footerData.copyright.icp }}
-        </p>
         <p class="site-footer__notice">{{ footerData.copyright.notice }}</p>
       </div>
     </div>
@@ -88,10 +98,21 @@
 </template>
 
 <script setup lang="ts">
-import { footerData } from '@/data/footer'
+import { computed } from 'vue'
+import { footerData } from '@/assets/data/footer'
+import { languageStats } from '@/assets/data/languages'
 
 // 版权年份动态获取，避免硬编码
 const currentYear = new Date().getFullYear()
+
+// 语言构成：由原始数据自动计算百分比，组件不依赖具体数据格式
+const languages = computed(() => {
+  const total = languageStats.reduce((sum, item) => sum + item.bytes, 0) || 1
+  return languageStats.map((item) => ({
+    name: item.name,
+    percent: Math.round((item.bytes / total) * 100),
+  }))
+})
 </script>
 
 <style lang="scss" scoped>
@@ -113,7 +134,7 @@ const currentYear = new Date().getFullYear()
 /* ========== 桌面多列布局 ========== */
 .site-footer__grid {
   display: grid;
-  grid-template-columns: 1.3fr 1fr 1.2fr;
+  grid-template-columns: 1.3fr 1fr 1fr 1.2fr;
   gap: 2.5rem;
   align-items: start;
 }
@@ -201,6 +222,40 @@ const currentYear = new Date().getFullYear()
   overflow-wrap: break-word;
 }
 
+/* GitHub「编辑此站」等下划线强调链接（类似 <u> 标签） */
+.site-footer__link--underline {
+  text-decoration: underline;
+}
+
+/* ========== 项目语言构成（简洁展示，无复杂图表） ========== */
+.site-footer__lang-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site-footer__lang-item {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: 0.9rem;
+  min-width: 0;
+}
+
+.site-footer__lang-name {
+  color: $color-nav-text;
+}
+
+.site-footer__lang-percent {
+  flex-shrink: 0;
+  color: $color-text-dim;
+  font-variant-numeric: tabular-nums;
+}
+
 /* ========== 分割线 ========== */
 .site-footer__divider {
   height: 1px;
@@ -218,7 +273,6 @@ const currentYear = new Date().getFullYear()
 }
 
 .site-footer__copyright,
-.site-footer__icp,
 .site-footer__notice {
   margin: 0;
   font-size: 0.8125rem;
@@ -229,6 +283,13 @@ const currentYear = new Date().getFullYear()
 .site-footer__notice {
   width: 100%;
   opacity: 0.85;
+}
+
+/* ========== 中等屏幕（769–1024px）：两列 ========== */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .site-footer__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 /* ========== 移动端（≤768px）：单列 ========== */
