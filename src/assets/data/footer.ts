@@ -78,13 +78,7 @@ export const footerData: FooterData = {
         label: 'QQ 群',
         text: '点击跳转加入群聊',
         href: 'https://qm.qq.com/q/HWrYTzo2EU',
-      },
-      {
-        icon: 'bi bi-envelope',
-        label: '邮箱',
-        // 占位邮箱，请替换为部门公开邮箱
-        text: 'contact@wlb.yt437700.top',
-        href: 'mailto:contact@wlb.yt437700.top',
+        underline: true,
       },
       {
         icon: 'bi bi-github',
