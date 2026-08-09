@@ -31,9 +31,7 @@
         <div
           v-for="(item, index) in filteredItems"
           :key="item.image"
-          :data-key="item.image"
           class="gallery-grid__item"
-          :class="{ 'is-visible': visibleKeys.has(item.image) }"
           :style="{ transitionDelay: `${Math.min(index, 7) * 50}ms` }"
         >
           <GalleryCard
@@ -51,7 +49,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, nextTick, onMounted, onUnmounted, reactive, ref, watch } from 'vue'
+import { computed, nextTick, onMounted, onUnmounted, ref, watch } from 'vue'
 import { galleryCategories, galleryData } from '@/data/gallery'
 import GalleryCard from '@/components/UI/GalleryCard.vue'
 import GalleryLightbox from '@/components/UI/GalleryLightbox.vue'
@@ -81,11 +79,12 @@ watch(filteredItems, () => {
 })
 
 /* ---------- 入场 reveal 动画 ---------- */
+// 与其他板块（核心成员/部门内岗位等）保持一致：进入视口加 .is-visible 触发动画，
+// 离开视口移除，每次进出 viewport 都会重新触发。
+// 注意：reveal 类加在外层 .gallery-grid__item 包裹 div（静态 class，无动态 class 绑定，
+// Vue 不会覆写其 class），避免加到 GalleryCard 根元素上被其 active 类绑定补丁抹掉。
 const sectionEl = ref<HTMLElement | null>(null)
 const headerEl = ref<HTMLElement | null>(null)
-// 卡片可见状态用 Vue 响应式集合驱动，避免手动 classList 被 Vue 类绑定补丁抹掉
-// （点击卡片时 active 类变化会覆写 class 列表，导致手动加的 is-visible 丢失、卡片 opacity:0 消失）
-const visibleKeys = reactive(new Set<string>())
 let observer: IntersectionObserver | null = null
 
 const observeReveal = () => {
@@ -94,15 +93,9 @@ const observeReveal = () => {
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          const el = entry.target as HTMLElement
-          const key = el.dataset.key
-          if (key) {
-            visibleKeys.add(key)
-          } else {
-            // 标题等无 data-key 的元素（无动态 class 绑定，Vue 不会覆写其 class）
-            el.classList.add('is-visible')
-          }
-          observer?.unobserve(entry.target)
+          entry.target.classList.add('is-visible')
+        } else {
+          entry.target.classList.remove('is-visible')
         }
       })
     },
