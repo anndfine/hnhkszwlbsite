@@ -74,7 +74,7 @@ export const footerData: FooterData = {
     title: '联系信息',
     items: [
       {
-        icon: 'bi bi-qq',
+        icon: 'bi bi-tencent-qq',
         label: 'QQ 群',
         text: '点击跳转加入群聊',
         href: 'https://qm.qq.com/q/HWrYTzo2EU',
