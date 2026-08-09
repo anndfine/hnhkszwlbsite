@@ -146,8 +146,8 @@ onUnmounted(() => {
     inset: 0;
     z-index: -1;
     background: rgba($color-bg-dark, 0.7);
-    backdrop-filter: blur(2px);
     -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
   }
 }
 
